@@ -1,0 +1,272 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+ 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="*rüülps* Hallo :)"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Drop the mic"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="#FF69B4"
+                android:text="Harrys Eule Hermine"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF69B4" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="irischeiren"
+                        android:text="Irische\nIren"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="journalist2"
+                        android:text="Ich als\nJournalist 2"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="schwulbullshit"
+                        android:text="Schwul\nBullshit"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="sogebildet"
+                        android:text="So\nGebildet"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="istderhaesslich"
+                        android:text="Ist der\nhässlich"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="topbesetzung"
+                        android:text="Top\nBesetzung"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="lutschen"
+                        android:text="Lutschen!"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="jogurth"
+                        android:text="Jogurth"
+                        android:textColor="#FF69B4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="journalist1"
+                        android:text="Ich als\nJournalist"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="purezauberei"
+                        android:text="Pure\nZauberei"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="sodummkanndiedochnichtsein"
+                        android:text="So dumm kann die doch nicht sein"
+                        android:textColor="#FF69B4"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="sotalentiert"
+                        android:text="So\ntalentiert"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="keinetraenen"
+                        android:text="Keine\nTränen"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="hellemal"
+                        android:text="Das helle\nMal"
+                        android:textColor="#FF69B4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="lache1"
+                        android:text="Lache 1"
+                        android:textColor="#FF69B4" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Behinderte kleine AVENGERS Syncro"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#4286f4" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="bratwurstmitsenf"
+                        android:text="Bratwurst\nmit Senf"
+                        android:textColor="#4286f4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="ichhabnstander"
+                        android:text="Ich hab n\nStänder"
+                        android:textColor="#4286f4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="nice"
+                        android:text="Nice"
+                        android:textColor="#4286f4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="wasistdeinlieblingstrinken"
+                        android:text="Was ist dein\nLieblingsgetränk"
+                        android:textColor="#4286f4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="einbausparvertrag"
+                        android:text="Sweet, ein\nBausparvertrag"
+                        android:textColor="#4286f4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="nebanane"
+                        android:text="Ne Banane"
+                        android:textColor="#4286f4" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="68dp"
+                        android:onClick="onClick"
+                        android:tag="volldumm"
+                        android:text="Ah, voll dumm"
+                        android:textColor="#4286f4" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
