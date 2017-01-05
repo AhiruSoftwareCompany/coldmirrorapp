@@ -2,7 +2,7 @@
 A soundboard app with quotes and effects from coldmirror (German YouTuber)
 
 ## Installing the coldmirrorapp
-Download the coldmirror.apk and copy it on your android phone. Open the file browser and navigate to the apk-file. Install it by clicking on it, accepting the warning and enjoy the app :)
+Download the coldmirror.apk and copy it on your android phone. Open the file browser and navigate to the apk-file. Install it by clicking on it, accept the warning and enjoy the app :)
 
 
 ## Fork the repo
