@@ -60,7 +60,7 @@ upstream https://github.com/dieechtenilente/coldmirrorapp.git (push)
 ```
 
 ### Sync your fork
-Once you have set up a remote upstream you can keep your fork up to date with our samples repository by syncing your fork.
+Once you have set up a remote upstream you can keep your fork up to date with our repository by syncing your fork.
 
 - Open a terminal or command prompt
 - Change to the current working directory of your local repository
@@ -76,13 +76,13 @@ $ git fetch upstream
 $ git checkout master
 ```
 
-- Merge changes from `upstream/master` into  your local `master` branch which syncs your forks `master` branch with our samples repository.
+- Merge changes from `upstream/master` into  your local `master` branch which syncs your forks `master` branch with our repository.
 
 ```
 $ git merge upstream/master
 ```
 
-## Import Gradle Sample project into Android Studio
+## Import Gradle project into Android Studio
 Once the project is cloned to disk you can import into Android Studio:
 
 * From the toolbar select **File > Import Project**, or **Import Non-Android Studio project** from the Welcome Quick Start.
