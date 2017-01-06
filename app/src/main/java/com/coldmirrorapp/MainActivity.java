@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 						mediaPlayer.release();
 					}
 					mediaPlayer = null;
-				} catch {
+				} catch (Exception e){
 
 				}
 			}
@@ -43,7 +43,6 @@ public class MainActivity extends Activity {
 					mp.release();
 				}
 
-				;
 			});
 			mediaPlayer.start();
 
