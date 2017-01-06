@@ -21,11 +21,15 @@ public class MainActivity extends Activity {
 		stop.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (mediaPlayer != null) {
-					mediaPlayer.pause();
-					mediaPlayer.release();
+				try {
+					if (mediaPlayer != null) {
+						mediaPlayer.pause();
+						mediaPlayer.release();
+					}
+					mediaPlayer = null;
+				} catch {
+
 				}
-				mediaPlayer = null;
 			}
 		});
 	}
@@ -37,7 +41,9 @@ public class MainActivity extends Activity {
 			mediaPlayer.setOnCompletionListener(new OnCompletionListener() {
 				public void onCompletion(MediaPlayer mp) {
 					mp.release();
-				};
+				}
+
+				;
 			});
 			mediaPlayer.start();
 
