@@ -2,8 +2,10 @@
 A soundboard app with quotes and effects from coldmirror (German YouTuber)
 
 ## Installing the coldmirrorapp
-Download the coldmirror.apk and copy it on your android phone. Open the file browser and navigate to the apk-file. Install it by clicking on it, accept the warning and enjoy the app :)
+Download the [coldmirror.apk](https://github.com/dieechtenilente/coldmirrorapp/releases) and copy it to your android phone. Open the file browser and navigate to the apk file. To install it, click on it and accept the warning. Enjoy the app :)
 
+![](https://raw.githubusercontent.com/dieechtenilente/coldmirrorapp/master/screenshots/screenshot1.png)
+![](https://raw.githubusercontent.com/dieechtenilente/coldmirrorapp/master/screenshots/screenshot2.png)
 
 ## Fork the repo
 If you haven't already, fork the [this repo](https://github.com/dieechtenilente/coldmirrorapp/fork).
@@ -21,7 +23,7 @@ Clone the **coldmirror app** in Android Studio:
 ### Command line Git
 [Clone the coldmirrorapp](https://help.github.com/articles/fork-a-repo#step-2-clone-your-fork)
 
-Open your terminal, navigate to your working directory, use `git clone` to get a copy of the repo.
+Open your terminal, navigate to your working directory, use `git clone` to get a local copy of the repo.
 
 ```
 # Clones your fork of the repository into the current directory in terminal
@@ -58,7 +60,7 @@ upstream https://github.com/dieechtenilente/coldmirrorapp.git (push)
 ```
 
 ### Sync your fork
-Once you have set up a remote upstream you can keep your fork up to date with our samples repository by syncing your fork.
+Once you have set up a remote upstream, you can keep your fork up to date with our repository by syncing your fork.
 
 - Open a terminal or command prompt
 - Change to the current working directory of your local repository
@@ -74,22 +76,22 @@ $ git fetch upstream
 $ git checkout master
 ```
 
-- Merge changes from `upstream/master` into  your local `master` branch which syncs your forks `master` branch with our samples repository.
+- Merge changes from `upstream/master` into  your local `master` branch which syncs your forks `master` branch with our repository.
 
 ```
 $ git merge upstream/master
 ```
 
-## Import Gradle Sample project into Android Studio
+## Import Gradle project into Android Studio
 Once the project is cloned to disk you can import into Android Studio:
 
 * From the toolbar select **File > Import Project**, or **Import Non-Android Studio project** from the Welcome Quick Start.
 * Navigate to the root project folder, **coldmirrorapp** directory and click **OK**
 
 ## Issues
-Find a bug or want to request a new feature enhancement?  Please let us know by submitting an issue.
+Found a bug? Want to request a new feature?  Please let us know by submitting an issue.
 
 ## Contributing
 Anyone and everyone is welcome to contribute e.g. sounds (with YouTube source).
 
-Readme adapted: [Esri](https://github.com/Esri/arcgis-runtime-samples-android)
+Readme adapted from [Esri](https://github.com/Esri/arcgis-runtime-samples-android)
