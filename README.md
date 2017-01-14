@@ -94,4 +94,7 @@ Found a bug? Want to request a new feature?  Please let us know by submitting an
 ## Contributing
 Anyone and everyone is welcome to contribute e.g. sounds (with YouTube source).
 
+## Sources/Adaptions
 Readme adapted from [Esri](https://github.com/Esri/arcgis-runtime-samples-android)
+
+[ViewFlipper implementation (codetheory.in)](http://codetheory.in/android-viewflipper-and-viewswitcher)
