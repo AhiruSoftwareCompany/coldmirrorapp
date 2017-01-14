@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 25
     buildToolsVersion "25.0.1"
 
     defaultConfig {
         applicationId "com.coldmirrorapp"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 25
     }
 
     buildTypes {
@@ -20,4 +20,5 @@ android {
 
 dependencies {
     compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }
