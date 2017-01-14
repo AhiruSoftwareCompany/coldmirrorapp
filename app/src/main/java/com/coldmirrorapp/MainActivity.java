@@ -92,9 +92,7 @@ public class MainActivity extends Activity {
 		searchField.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
 			public boolean onQueryTextSubmit(String query) {
-				if (query.equals("")) {
-					addQuotesToList(searchField.getQuery().toString());
-				}
+				addQuotesToList(searchField.getQuery().toString());
 				return false;
 			}
 
