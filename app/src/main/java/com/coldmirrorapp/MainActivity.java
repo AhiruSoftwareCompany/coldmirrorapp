@@ -17,6 +17,11 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		// Closes issue #6
+		if (getActionBar()!= null){
+			getActionBar().hide();
+		}
+
 		Button stop = (Button) (findViewById(R.id.stop));
 		stop.setOnClickListener(new OnClickListener() {
 			@Override
@@ -28,7 +33,8 @@ public class MainActivity extends Activity {
 					}
 					mediaPlayer = null;
 				} catch (Exception e){
-
+					//e Print Stack Trace <-- Fachbegriff für eingefleischte Informatiker
+					e.printStackTrace();
 				}
 			}
 		});
