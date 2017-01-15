@@ -11,18 +11,21 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="1">
+            android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/intro"
+                android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"/>
+                android:textSize="20sp"/>
 
             <Button
                 android:id="@+id/stop"
@@ -416,18 +419,18 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/search"
                 android:textAlignment="center"
-                android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:textSize="20sp"/>
 
             <Button
                 android:id="@+id/stop2"
