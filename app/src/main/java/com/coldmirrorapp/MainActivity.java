@@ -72,6 +72,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		Button stop = (Button) (findViewById(R.id.stop));
+		Button stop2 = (Button) (findViewById(R.id.stop2));
 		searchField = (SearchView) findViewById(R.id.searchField);
 		quoteList = (ListView) findViewById(R.id.quotelist);
 
@@ -82,16 +83,14 @@ public class MainActivity extends Activity {
 		stop.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				try {
-					if (mediaPlayer != null) {
-						mediaPlayer.pause();
-						mediaPlayer.release();
-					}
-					mediaPlayer = null;
-				} catch (Exception e) {
-					//e Print Stack Trace <-- Fachbegriff für eingefleischte Informatiker
-					e.printStackTrace();
-				}
+				stop();
+			}
+		});
+
+		stop2.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				stop();
 			}
 		});
 
@@ -129,6 +128,19 @@ public class MainActivity extends Activity {
 
 		} catch (Exception e) {
 			Toast.makeText(this, R.string.notworking, Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	public void stop() {
+		try {
+			if (mediaPlayer != null) {
+				mediaPlayer.pause();
+				mediaPlayer.release();
+			}
+			mediaPlayer = null;
+		} catch (Exception e) {
+			//e Print Stack Trace <-- Fachbegriff für eingefleischte Informatiker
+			e.printStackTrace();
 		}
 	}
 
