@@ -58,6 +58,13 @@ public class MainActivity extends Activity {
 			new Quote("topbesetzung", "Top Besetzung"),
 			new Quote("unzufrieden", "Unzufriedenes Volk"),
 			new Quote("volldumm", "Ah, voll dumm"),
+			new Quote("geileKarten", "Geile Karten"),
+			new Quote("istdasnichtgenial", "Ist das nicht genial?"),
+			new Quote("jetztsindsiealletot", "Jetzt sind sie alle tot."),
+			new Quote("normalersatzbau", "Normaler lateinischer Satzbau"),
+			new Quote("schlechterfilm", "Schlechter Film"),
+			new Quote("toastrack", "Toast Rack"),
+			new Quote("yaytot", "Yay, Tot :)"),
 			new Quote("wasistdeinlieblingstrinken", "Was ist dein Lieblingsgetränk")};
 
 	@Override
