@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
 			new Quote("topbesetzung", "Top Besetzung"),
 			new Quote("unzufrieden", "Unzufriedenes Volk"),
 			new Quote("volldumm", "Ah, voll dumm"),
-			new Quote("geileKarten", "Geile Karten"),
+			new Quote("geilekarten", "Geile Karten"),
 			new Quote("istdasnichtgenial", "Ist das nicht genial?"),
 			new Quote("jetztsindsiealletot", "Jetzt sind sie alle tot."),
 			new Quote("normalersatzbau", "Normaler lateinischer Satzbau"),
