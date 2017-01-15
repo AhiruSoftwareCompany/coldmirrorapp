@@ -387,6 +387,7 @@
                             android:onClick="onClick"
                             android:tag="kindheitgeloescht"
                             android:text="@string/kindheitgeloescht"
+                            android:textColor="#F7B600"
                             />
 
                         <Button
@@ -394,7 +395,8 @@
                             android:layout_height="68dp"
                             android:onClick="onClick"
                             android:tag="ahahahalustig"
-                            android:text="@string/ahahahalustig"/>
+                            android:text="@string/ahahahalustig"
+                            android:textColor="#F7B600"/>
 
                         <View
                             android:layout_width="match_parent"
@@ -425,8 +427,9 @@
             android:id="@+id/searchField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:queryHint="Search"
-            />
+            android:focusable="true"
+            android:orientation="horizontal"
+            android:queryHint="Search"/>
 
         <ListView
             android:id="@+id/quotelist"

@@ -66,6 +66,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		Button stop = (Button) (findViewById(R.id.stop));
 		searchField = (SearchView) findViewById(R.id.searchField);
+		quoteList = (ListView) findViewById(R.id.quotelist);
 
 		vf = (ViewFlipper) findViewById(R.id.flipper);
 		vf.setInAnimation(this, android.R.anim.fade_in);
@@ -98,9 +99,7 @@ public class MainActivity extends Activity {
 
 			@Override
 			public boolean onQueryTextChange(String newText) {
-				if (newText.equals("")) {
-					addQuotesToList(searchField.getQuery().toString());
-				}
+				addQuotesToList(searchField.getQuery().toString());
 				return false;
 			}
 		});
@@ -118,7 +117,6 @@ public class MainActivity extends Activity {
 				public void onCompletion(MediaPlayer mp) {
 					mp.release();
 				}
-
 			});
 			mediaPlayer.start();
 
@@ -145,7 +143,6 @@ public class MainActivity extends Activity {
 	}
 
 	public void addQuotesToList(String filter) {
-		quoteList = (ListView) findViewById(R.id.quotelist);
 		QuoteAdapter quoteAdapter = new QuoteAdapter(this, new ArrayList<Quote>());
 		quoteList.setAdapter(quoteAdapter);
 
@@ -166,20 +163,21 @@ public class MainActivity extends Activity {
 				play(qa.getItem(position));
 			}
 		});
-		quoteList.setFastScrollEnabled(true);
 	}
 
-
-	// Layout-Stuff
+	//Layout-Stuff
 
 	public void showSearch() {
 		vf.setDisplayedChild(1);
 		menu.findItem(R.id.search).setIcon(android.R.drawable.ic_menu_revert);
+		searchField.setIconified(false);
+
 	}
 
 	public void hideSearch() {
 		vf.setDisplayedChild(0);
 		menu.findItem(R.id.search).setIcon(android.R.drawable.ic_menu_search);
+		searchField.setIconified(true);
 	}
 
 	@Override
