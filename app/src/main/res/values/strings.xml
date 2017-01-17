@@ -10,8 +10,10 @@
     <string name="micdrop">Drop the mic!</string>
     <string name="search_menu">Suche</string>
     <string name="search">Nach Spruch suchen</string>
+    <string name="searchhint">Search ...</string>
     <string name="notworking">Das geht nicht!</string>
     <string name="PressAgainToLeave">Drücke erneut \'zurück\', um die App zu schließen.</string>
+    <string name="playicon">Play icon</string>
 
     <string name="ahahahalustig">Ahahaha Lustig!</string>
     <string name="boahistdaslustig">Boah ist das lustig</string>

@@ -430,6 +430,7 @@
                 android:gravity="center"
                 android:text="@string/search"
                 android:textAlignment="center"
+                android:textColor="#FFFFFF"
                 android:textSize="20sp"/>
 
             <Button
@@ -445,9 +446,11 @@
             android:id="@+id/searchField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:editTextColor="#F7B600"
             android:focusable="true"
             android:orientation="horizontal"
-            android:queryHint="Search"/>
+            android:queryHint="@string/searchhint"
+            android:textColor="#F7B600"/>
 
         <ListView
             android:id="@+id/quotelist"

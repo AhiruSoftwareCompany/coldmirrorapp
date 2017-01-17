@@ -28,44 +28,44 @@ public class MainActivity extends Activity {
 
 	//List of all quotes for indexing/searching
 	Quote[] quoteArray = {
-			new Quote("ahahahalustig", "Ahahaha Lustig!"),
-			new Quote("boahistdaslustig", "Boah ist das lustig"),
-			new Quote("bratwurstmitsenf", "Bratwurst mit Senf"),
-			new Quote("brutalekillerspiele", "Grund: Brutale Killerspiele"),
-			new Quote("coldmirrormachtpornos", "Coldmirror macht Pornos"),
-			new Quote("einbausparvertrag", "Sweet, ein Bausparvertrag"),
-			new Quote("fickmichblick", "\'Fick mich\' Blick"),
-			new Quote("hellemal", "Das helle Mal"),
-			new Quote("hi1", "Hiii 1"),
-			new Quote("ichhabnstander", "Ich hab n Ständer"),
-			new Quote("irischeiren", "Irische Iren"),
-			new Quote("istderhaesslich", "Ist der hässlich"),
-			new Quote("jogurth", "Jogurth"),
-			new Quote("journalist1", "Ich als Journalist"),
-			new Quote("journalist2", "Ich als Journalist 2"),
-			new Quote("keinetraenen", "Keine Tränen"),
-			new Quote("kindheitgeloescht", "Kindheitserinnerung gelöscht"),
-			new Quote("krankenwagen", "Krankenwagen"),
-			new Quote("lache1", "Lache 1"),
-			new Quote("lutschen", "Lutschen!"),
-			new Quote("nebanane", "Ne Banane"),
-			new Quote("nice", "Nice"),
-			new Quote("purezauberei", "Pure Zauberei"),
-			new Quote("schwulbullshit", "Schwul, Bullshit"),
-			new Quote("sodummkanndiedochnichtsein", "So dumm kann die doch nicht sein"),
-			new Quote("sogebildet", "So Gebildet"),
-			new Quote("sotalentiert", "So talentiert"),
-			new Quote("topbesetzung", "Top Besetzung"),
-			new Quote("unzufrieden", "Unzufriedenes Volk"),
-			new Quote("volldumm", "Ah, voll dumm"),
-			new Quote("geilekarten", "Geile Karten"),
-			new Quote("istdasnichtgenial", "Ist das nicht genial?"),
-			new Quote("jetztsindsiealletot", "Jetzt sind sie alle tot."),
-			new Quote("normalersatzbau", "Normaler lateinischer Satzbau"),
-			new Quote("schlechterfilm", "Schlechter Film"),
-			new Quote("toastrack", "Toast Rack"),
-			new Quote("yaytot", "Yay, Tot :)"),
-			new Quote("wasistdeinlieblingstrinken", "Was ist dein Lieblingsgetränk")};
+			new Quote(Category.random, "ahahahalustig", "Ahahaha Lustig!"),
+			new Quote(Category.random, "boahistdaslustig", "Boah ist das lustig"),
+			new Quote(Category.avengers, "bratwurstmitsenf", "Bratwurst mit Senf"),
+			new Quote(Category.random, "brutalekillerspiele", "Grund: Brutale Killerspiele"),
+			new Quote(Category.random, "coldmirrormachtpornos", "Coldmirror macht Pornos"),
+			new Quote(Category.avengers, "einbausparvertrag", "Sweet, ein Bausparvertrag"),
+			new Quote(Category.random, "fickmichblick", "\'Fick mich\' Blick"),
+			new Quote(Category.harrypotter, "hellemal", "Das helle Mal"),
+			new Quote(Category.random, "hi1", "Hiii 1"),
+			new Quote(Category.avengers, "ichhabnstander", "Ich hab n Ständer"),
+			new Quote(Category.harrypotter, "irischeiren", "Irische Iren"),
+			new Quote(Category.harrypotter, "journalist1", "Ich als Journalist"),
+			new Quote(Category.harrypotter, "journalist2", "Ich als Journalist 2"),
+			new Quote(Category.harrypotter, "keinetraenen", "Keine Tränen"),
+			new Quote(Category.avengers, "nebanane", "Ne Banane"),
+			new Quote(Category.avengers, "nice", "Nice"),
+			new Quote(Category.random, "sodummkanndiedochnichtsein", "So dumm kann die doch nicht sein"),
+			new Quote(Category.harrypotter, "sogebildet", "So Gebildet"),
+			new Quote(Category.random, "sotalentiert", "So talentiert"),
+			new Quote(Category.harrypotter, "topbesetzung", "Top Besetzung"),
+			new Quote(Category.random, "unzufrieden", "Unzufriedenes Volk"),
+			new Quote(Category.harrypotter, "volldumm", "Ah, voll dumm"),
+			new Quote(Category.harrypotter, "geilekarten", "Geile Karten"),
+			new Quote(Category.harrypotter, "jetztsindsiealletot", "Jetzt sind sie alle tot."),
+			new Quote(Category.harrypotter, "normalersatzbau", "Normaler lateinischer Satzbau"),
+			new Quote(Category.harrypotter, "schlechterfilm", "Schlechter Film"),
+			new Quote(Category.harrypotter, "toastrack", "Toast Rack"),
+			new Quote(Category.harrypotter, "yaytot", "Yay, Tot :)"),
+			new Quote(Category.avengers, "wasistdeinlieblingstrinken", "Was ist dein Lieblingsgetränk"),
+			new Quote(Category.harrypotter, "istderhaesslich", "Ist der hässlich"),
+			new Quote(Category.harrypotter, "jogurth", "Jogurth"),
+			new Quote(Category.random, "kindheitgeloescht", "Kindheitserinnerung gelöscht"),
+			new Quote(Category.random, "krankenwagen", "Krankenwagen"),
+			new Quote(Category.random, "lache1", "Lache 1"),
+			new Quote(Category.harrypotter, "lutschen", "Lutschen!"),
+			new Quote(Category.harrypotter, "purezauberei", "Pure Zauberei"),
+			new Quote(Category.harrypotter, "schwulbullshit", "Schwul, Bullshit"),
+			new Quote(Category.random, "istdasnichtgenial", "Ist das nicht genial?"),};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,8 +77,8 @@ public class MainActivity extends Activity {
 		quoteList = (ListView) findViewById(R.id.quotelist);
 
 		vf = (ViewFlipper) findViewById(R.id.flipper);
-		vf.setInAnimation(this, android.R.anim.fade_in);
-		vf.setOutAnimation(this, android.R.anim.fade_out);
+		vf.setInAnimation(this, android.R.anim.slide_in_left);
+		vf.setOutAnimation(this, android.R.anim.slide_out_right);
 
 		stop.setOnClickListener(new OnClickListener() {
 			@Override
