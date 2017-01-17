@@ -65,7 +65,10 @@ public class MainActivity extends Activity {
 			new Quote(Category.harrypotter, "lutschen", "Lutschen!"),
 			new Quote(Category.harrypotter, "purezauberei", "Pure Zauberei"),
 			new Quote(Category.harrypotter, "schwulbullshit", "Schwul, Bullshit"),
-			new Quote(Category.random, "istdasnichtgenial", "Ist das nicht genial?"),};
+			new Quote(Category.random, "istdasnichtgenial", "Ist das nicht genial?"),
+			new Quote(Category.harrypotter, "tannenzapfen", "Tannenzapfen."),
+			new Quote(Category.harrypotter, "nicerdumbledore", "Netter Dumbledore"),
+			new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf der Stirn")};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
