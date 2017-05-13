@@ -97,4 +97,6 @@ Anyone and everyone is welcome to contribute e.g. sounds (with YouTube source).
 ## Sources/Adaptions
 Readme adapted from [Esri](https://github.com/Esri/arcgis-runtime-samples-android)
 
-[ViewFlipper implementation (codetheory.in)](http://codetheory.in/android-viewflipper-and-viewswitcher)
+
+### 4 oki
+[mp3](https://github.com/dieechtenilente/coldmirrorapp/tree/master/app/src/main/res/raw)
