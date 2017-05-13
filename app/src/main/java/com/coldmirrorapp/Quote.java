@@ -1,9 +1,5 @@
 package com.coldmirrorapp;
 
-/**
- * Holds Quotes
- */
-
 class Quote {
 	private String id;
 	private String name;

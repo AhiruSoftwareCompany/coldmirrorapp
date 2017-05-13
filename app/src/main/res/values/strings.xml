@@ -1,49 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Coldmirror App</string>
+    <string name="app_name">Coldmirror Soundboard</string>
 
-    <string name="category_harrypotter">Harrys Eule Hermine</string>
-    <string name="category_avengers">Behinderte kleine AVENGERS Syncro</string>
-    <string name="category_rdm">Random Coldmirror (Farbe: Indisch Gelb)</string>
-
-    <string name="intro">*rüülps* Hallo :)</string>
-    <string name="micdrop">Drop the mic!</string>
     <string name="search_menu">Suche</string>
     <string name="search">Nach Spruch suchen</string>
-    <string name="searchhint">Search ...</string>
     <string name="notworking">Das geht nicht!</string>
     <string name="PressAgainToLeave">Drücke erneut \'zurück\', um die App zu schließen.</string>
-    <string name="playicon">Play icon</string>
-
-    <string name="ahahahalustig">Ahahaha Lustig!</string>
-    <string name="boahistdaslustig">Boah ist das lustig</string>
-    <string name="bratwurstmitsenf">Bratwurst mit Senf</string>
-    <string name="brutalekillerspiele">Grund: Brutale Killerspiele</string>
-    <string name="coldmirrormachtpornos">Coldmirror macht Pornos</string>
-    <string name="einbausparvertrag">Sweet, ein Bausparvertrag</string>
-    <string name="fickmichblick">\'Fick mich\' Blick</string>
-    <string name="hellemal">Das helle Mal</string>
-    <string name="hi1">Hiii 1</string>
-    <string name="ichhabnstander">Ich hab n Ständer</string>
-    <string name="irischeiren">Irische Iren</string>
-    <string name="istderhaesslich">Ist der hässlich</string>
-    <string name="jogurth">Jogurth</string>
-    <string name="journalist1">Ich als Journalist</string>
-    <string name="journalist2">Ich als Journalist 2</string>
-    <string name="keinetraenen">Keine Tränen</string>
-    <string name="kindheitgeloescht">Kindheitserinnerung gelöscht</string>
-    <string name="krankenwagen">Krankenwagen</string>
-    <string name="lache1">Lache 1</string>
-    <string name="lutschen">Lutschen!</string>
-    <string name="nebanane">Ne Banane</string>
-    <string name="nice">Nice</string>
-    <string name="purezauberei">Pure Zauberei</string>
-    <string name="schwulbullshit">Schwul, Bullshit</string>
-    <string name="sodummkanndiedochnichtsein">So dumm kann die doch nicht sein</string>
-    <string name="sogebildet">So Gebildet</string>
-    <string name="sotalentiert">So talentiert</string>
-    <string name="topbesetzung">Top Besetzung</string>
-    <string name="unzufrieden">Unzufriedenes Volk</string>
-    <string name="volldumm">Ah, voll dumm</string>
-    <string name="wasistdeinlieblingstrinken">Was ist dein Lieblingsgetränk</string>
 </resources>
