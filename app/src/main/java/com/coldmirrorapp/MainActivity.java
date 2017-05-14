@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     private SearchView searchField;
-    private GridView quoteList;
     private Menu menu;
+    private GridView quoteList;
     private MediaPlayer mediaPlayer;
     private boolean doubleBackToExitPressedOnce;
 
@@ -70,9 +70,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         searchField = (SearchView) findViewById(R.id.searchField);
-        searchField.setVisibility(View.GONE);
         quoteList = (GridView) findViewById(R.id.quoteList);
-        addQuotesToList(null);
+        clearSearch(true);
 
         searchField.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -87,6 +86,19 @@ public class MainActivity extends Activity {
                 return false;
             }
         });
+    }
+
+    ///TODO: Find better name
+    public void clearSearch(boolean b) {
+        if (b) {
+            searchField.setVisibility(View.GONE);
+            searchField.clearFocus();
+            addQuotesToList(null);
+        } else {
+            searchField.setVisibility(View.VISIBLE);
+            searchField.setIconified(false);
+            searchField.requestFocus();
+        }
     }
 
     public void addQuotesToList(String filter) {
@@ -116,15 +128,16 @@ public class MainActivity extends Activity {
         });
     }
 
-    public void play(View v) {
+    public void play(Quote q) {
         try {
-            int resId = getResources().getIdentifier(v.getTag() + "", "raw", getPackageName());
+            int resId = getResources().getIdentifier(q.getId(), "raw", getPackageName());
             mediaPlayer = MediaPlayer.create(this, resId);
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 public void onCompletion(MediaPlayer mp) {
-                    mp.release();
+                    stop();
                 }
             });
+            menu.findItem(R.id.stop).setVisible(true);
             mediaPlayer.start();
 
         } catch (Exception e) {
@@ -139,38 +152,23 @@ public class MainActivity extends Activity {
                 mediaPlayer.release();
             }
             mediaPlayer = null;
+            menu.findItem(R.id.stop).setVisible(false);
         } catch (Exception e) {
             //e Print Stack Trace <-- Fachbegriff für eingefleischte Informatiker
             e.printStackTrace();
         }
     }
 
-    public void play(Quote q) {
-        try {
-            int resId = getResources().getIdentifier(q.getId(), "raw", getPackageName());
-            mediaPlayer = MediaPlayer.create(this, resId);
-            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                public void onCompletion(MediaPlayer mp) {
-                    mp.release();
-                }
 
-            });
-            mediaPlayer.start();
-
-        } catch (Exception e) {
-            Toast.makeText(this, R.string.notworking, Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
-	/*
-    Layout-Stuff
-	 */
+    /**
+     * Layout-Stuff
+     */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         this.menu = menu;
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        menu.findItem(R.id.stop).setVisible(false);
         return true;
     }
 
@@ -179,14 +177,13 @@ public class MainActivity extends Activity {
         switch (item.getItemId()) {
             case R.id.search:
                 if (searchField.getVisibility() == View.GONE) {
-                    searchField.setVisibility(View.VISIBLE);
-
-                    ///TODO: Improve this crap!!
-                    searchField.setIconified(false);
-                    searchField.requestFocusFromTouch();
+                    clearSearch(false);
                 } else {
-                    searchField.setVisibility(View.GONE);
+                    clearSearch(true);
                 }
+                break;
+            case R.id.stop:
+                stop();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -194,6 +191,11 @@ public class MainActivity extends Activity {
 
     @Override
     public void onBackPressed() {
+        if (searchField.getVisibility() == View.VISIBLE) {
+            clearSearch(true);
+            return;
+        }
+
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;

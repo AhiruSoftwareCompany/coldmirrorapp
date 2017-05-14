@@ -2,7 +2,8 @@
 <resources>
     <string name="app_name">Coldmirror Soundboard</string>
 
-    <string name="search_menu">Suche</string>
+    <string name="menu_search">Suche</string>
+    <string name="menu_stop">Stop</string>
     <string name="search">Nach Spruch suchen</string>
     <string name="notworking">Das geht nicht!</string>
     <string name="PressAgainToLeave">Drücke erneut \'zurück\', um die App zu schließen.</string>
