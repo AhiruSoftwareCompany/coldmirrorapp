@@ -31,7 +31,6 @@ public class MainActivity extends Activity {
     private MediaPlayer mediaPlayer;
     private boolean doubleBackToExitPressedOnce;
 
-    //List of all quotes for indexing/searching
     Quote[] quoteArray = {
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf der Stirn"),
             new Quote(Category.harrypotter, "geilekarten", "Geile Karten"),
@@ -84,10 +83,20 @@ public class MainActivity extends Activity {
         quoteList = (GridView) findViewById(R.id.quoteList);
         modifySearch(true);
 
+        searchField.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                searchField.setVisibility(View.GONE);
+                return false;
+            }
+        });
+
         searchField.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 addQuotesToList(searchField.getQuery().toString());
+                searchField.clearFocus();
+                addQuotesToList(null);
                 return false;
             }
 
@@ -102,8 +111,9 @@ public class MainActivity extends Activity {
     public void modifySearch(boolean clear) {
         if (clear) {
             searchField.setVisibility(View.GONE);
-            searchField.clearFocus();
+            searchField.setIconified(true);
             addQuotesToList(null);
+            searchField.clearFocus();
         } else {
             searchField.setVisibility(View.VISIBLE);
             searchField.setIconified(false);
