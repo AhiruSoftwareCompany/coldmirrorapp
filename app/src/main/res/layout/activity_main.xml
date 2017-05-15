@@ -10,11 +10,10 @@
         android:id="@+id/searchField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:editTextColor="#F7B600"
+        android:editTextColor="#FFFFFF"
         android:focusable="true"
         android:orientation="horizontal"
-        android:queryHint="@string/search"
-        android:textColor="#FFFFFF" />
+        android:queryHint="@string/search" />
 
     <GridView
         android:id="@+id/quoteList"
