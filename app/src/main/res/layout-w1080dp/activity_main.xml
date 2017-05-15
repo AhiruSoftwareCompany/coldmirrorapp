@@ -3,8 +3,7 @@
     android:layout_height="fill_parent"
     android:background="#000000"
     android:gravity="top|center"
-    android:orientation="vertical"
-    android:weightSum="1">
+    android:orientation="vertical">
 
     <SearchView
         android:id="@+id/searchField"
@@ -22,5 +21,5 @@
         android:layout_height="wrap_content"
         android:divider="#444444"
         android:dividerHeight="2dp"
-        android:numColumns="2" />
+        android:numColumns="3" />
 </LinearLayout>

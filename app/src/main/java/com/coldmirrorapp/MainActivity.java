@@ -1,9 +1,14 @@
 package com.coldmirrorapp;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ShareCompat;
+import android.support.v4.content.FileProvider;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,10 +17,15 @@ import android.widget.GridView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     private SearchView searchField;
+    private MainActivity ma = this;
     private Menu menu;
     private GridView quoteList;
     private MediaPlayer mediaPlayer;
@@ -69,9 +79,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         searchField = (SearchView) findViewById(R.id.searchField);
         quoteList = (GridView) findViewById(R.id.quoteList);
-        clearSearch(true);
+        modifySearch(true);
 
         searchField.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -88,9 +99,8 @@ public class MainActivity extends Activity {
         });
     }
 
-    ///TODO: Find better name
-    public void clearSearch(boolean b) {
-        if (b) {
+    public void modifySearch(boolean clear) {
+        if (clear) {
             searchField.setVisibility(View.GONE);
             searchField.clearFocus();
             addQuotesToList(null);
@@ -115,6 +125,7 @@ public class MainActivity extends Activity {
             }
         }
 
+
         quoteList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -122,10 +133,55 @@ public class MainActivity extends Activity {
 
                 // Removing the following line for sound overload
                 stop();
-
                 play(qa.getItem(position));
             }
         });
+
+        quoteList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                QuoteAdapter qa = (QuoteAdapter) parent.getAdapter();
+                String filename = qa.getItem(position).getId() + ".mp3";
+
+                ///TODO: Copy files to cache dir instead of files dir
+                File imageFile = new File(getFilesDir().getPath() + "/" + filename);
+
+                Uri uri = FileProvider.getUriForFile(ma, getApplication().getPackageName() + ".fileprovider", imageFile);
+
+                try {
+                    if (!imageFile.exists()) {
+                        final InputStream inputStream = getResources().openRawResource(getResources().getIdentifier(qa.getItem(position).getId(), "raw", getPackageName()));
+                        final FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+
+
+                        byte buf[] = new byte[1024];
+                        int len;
+
+                        while ((len = inputStream.read(buf)) > 0) {
+                            outputStream.write(buf, 0, len);
+                        }
+
+                        outputStream.flush();
+                        outputStream.getFD().sync();
+                        outputStream.close();
+                        inputStream.close();
+                    }
+
+                    Intent intent = ShareCompat.IntentBuilder.from(ma)
+                            .setType("audio/*")
+                            .setStream(uri)
+                            .setChooserTitle(getResources().getText(R.string.share))
+                            .createChooserIntent()
+                            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    ma.startActivity(intent);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return true;
+            }
+        });
+
     }
 
     public void play(Quote q) {
@@ -177,9 +233,9 @@ public class MainActivity extends Activity {
         switch (item.getItemId()) {
             case R.id.search:
                 if (searchField.getVisibility() == View.GONE) {
-                    clearSearch(false);
+                    modifySearch(false);
                 } else {
-                    clearSearch(true);
+                    modifySearch(true);
                 }
                 break;
             case R.id.stop:
@@ -192,7 +248,7 @@ public class MainActivity extends Activity {
     @Override
     public void onBackPressed() {
         if (searchField.getVisibility() == View.VISIBLE) {
-            clearSearch(true);
+            modifySearch(true);
             return;
         }
 

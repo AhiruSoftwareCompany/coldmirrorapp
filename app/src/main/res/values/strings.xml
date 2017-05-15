@@ -7,4 +7,5 @@
     <string name="search">Nach Spruch suchen</string>
     <string name="notworking">Das geht nicht!</string>
     <string name="PressAgainToLeave">Drücke erneut \'zurück\', um die App zu schließen.</string>
+    <string name="share">Spruch weiterleiten …</string>
 </resources>
