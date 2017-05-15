@@ -3,7 +3,8 @@
     android:layout_height="fill_parent"
     android:background="#000000"
     android:gravity="top|center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <SearchView
         android:id="@+id/searchField"
@@ -13,7 +14,7 @@
         android:focusable="true"
         android:orientation="horizontal"
         android:queryHint="@string/search"
-        android:textColor="#F7B600" />
+        android:textColor="#FFFFFF" />
 
     <GridView
         android:id="@+id/quoteList"
