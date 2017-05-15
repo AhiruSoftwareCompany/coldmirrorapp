@@ -106,35 +106,6 @@ public class MainActivity extends Activity {
                 return false;
             }
         });
-    }
-
-    public void modifySearch(boolean clear) {
-        if (clear) {
-            searchField.setVisibility(View.GONE);
-            searchField.setIconified(true);
-            addQuotesToList(null);
-            searchField.clearFocus();
-        } else {
-            searchField.setVisibility(View.VISIBLE);
-            searchField.setIconified(false);
-            searchField.requestFocus();
-        }
-    }
-
-    public void addQuotesToList(String filter) {
-        QuoteAdapter quoteAdapter = new QuoteAdapter(this, new ArrayList<Quote>());
-        quoteList.setAdapter(quoteAdapter);
-
-        for (Quote aQuoteArray : quoteArray) {
-            if (filter != null) {
-                if (aQuoteArray.getName().toLowerCase().contains(filter.toLowerCase())) {
-                    quoteAdapter.add(aQuoteArray);
-                }
-            } else {
-                quoteAdapter.add(aQuoteArray);
-            }
-        }
-
 
         quoteList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -191,7 +162,34 @@ public class MainActivity extends Activity {
                 return true;
             }
         });
+    }
 
+    public void modifySearch(boolean clear) {
+        if (clear) {
+            searchField.setVisibility(View.GONE);
+            searchField.setIconified(true);
+            addQuotesToList(null);
+            searchField.clearFocus();
+        } else {
+            searchField.setVisibility(View.VISIBLE);
+            searchField.setIconified(false);
+            searchField.requestFocus();
+        }
+    }
+
+    public void addQuotesToList(String filter) {
+        QuoteAdapter quoteAdapter = new QuoteAdapter(this, new ArrayList<Quote>());
+        quoteList.setAdapter(quoteAdapter);
+
+        for (Quote aQuoteArray : quoteArray) {
+            if (filter != null) {
+                if (aQuoteArray.getName().toLowerCase().contains(filter.toLowerCase())) {
+                    quoteAdapter.add(aQuoteArray);
+                }
+            } else {
+                quoteAdapter.add(aQuoteArray);
+            }
+        }
     }
 
     public void play(Quote q) {
