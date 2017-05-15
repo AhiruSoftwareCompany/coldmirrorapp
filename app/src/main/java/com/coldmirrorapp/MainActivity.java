@@ -223,7 +223,6 @@ public class MainActivity extends Activity {
         }
     }
 
-
     /**
      * Layout-Stuff
      */

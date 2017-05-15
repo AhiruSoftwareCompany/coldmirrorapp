@@ -14,8 +14,8 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
-        <item name="android:editTextColor">#F7B600</item>
-        <item name="android:textColor">#F7B600</item>
+        <item name="android:editTextColor">#FFFFFF</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
 </resources>
