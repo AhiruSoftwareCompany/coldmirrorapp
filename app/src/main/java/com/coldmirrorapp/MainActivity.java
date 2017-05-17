@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
             new Quote(Category.harrypotter, "irischeiren", "Irische Iren"),
             new Quote(Category.harrypotter, "istderhaesslich", "Ist der hässlich"),
             new Quote(Category.harrypotter, "jetztsindsiealletot", "Jetzt sind sie alle tot."),
-            new Quote(Category.harrypotter, "jogurth", "Jogurth"),
+            new Quote(Category.harrypotter, "joghurt", "Joghurt"),
             new Quote(Category.harrypotter, "journalist1", "Ich als Journalist"),
             new Quote(Category.harrypotter, "journalist2", "Ich als Journalist 2"),
             new Quote(Category.harrypotter, "keinetraenen", "Keine Tränen"),
@@ -122,7 +122,7 @@ public class MainActivity extends Activity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 QuoteAdapter qa = (QuoteAdapter) parent.getAdapter();
-                String filename = qa.getItem(position).getId() + ".mp3";
+                String filename = String.format("%s.mp3", qa.getItem(position).getId());
 
                 ///TODO: Copy files to cache dir instead of files dir
                 File imageFile = new File(getFilesDir().getPath() + "/" + filename);
