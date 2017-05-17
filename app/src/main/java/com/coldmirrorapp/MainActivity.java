@@ -127,7 +127,7 @@ public class MainActivity extends Activity {
                 ///TODO: Copy files to cache dir instead of files dir
                 File imageFile = new File(getFilesDir().getPath() + "/" + filename);
 
-                Uri uri = FileProvider.getUriForFile(ma, getApplication().getPackageName() + ".fileprovider", imageFile);
+                Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileprovider", getApplication().getPackageName()), imageFile);
 
                 try {
                     if (!imageFile.exists()) {
