@@ -7,10 +7,11 @@ Download the [coldmirror.apk](https://github.com/dieechtenilente/coldmirrorapp/r
 ![](https://raw.githubusercontent.com/dieechtenilente/coldmirrorapp/master/screenshots/screenshot1.png)
 ![](https://raw.githubusercontent.com/dieechtenilente/coldmirrorapp/master/screenshots/screenshot2.png)
 
-## Fork the repo
-If you haven't already, fork the [this repo](https://github.com/dieechtenilente/coldmirrorapp/fork).
+## Using the coldmirrorapp
+Clicking on a button plays the wanted sound, long press opens a share dialog to share the sound e.g. to a WhatsApp contact. The search on the top righthand corner is intuitive.
 
-## Clone the repo
+## Fork & Clone the repo
+If you haven't already, fork the [this repo](https://github.com/dieechtenilente/coldmirrorapp/fork).
 
 ### Android Studio
 Clone the **coldmirror app** in Android Studio:
@@ -82,7 +83,7 @@ $ git checkout master
 $ git merge upstream/master
 ```
 
-## Import Gradle project into Android Studio
+### Import Gradle project into Android Studio
 Once the project is cloned to disk you can import into Android Studio:
 
 * From the toolbar select **File > Import Project**, or **Import Non-Android Studio project** from the Welcome Quick Start.
