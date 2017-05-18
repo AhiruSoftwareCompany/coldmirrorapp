@@ -11,7 +11,7 @@ Download the [coldmirror.apk](https://github.com/dieechtenilente/coldmirrorapp/r
 Clicking on a button plays the wanted sound, long press opens a share dialog to share the sound e.g. to a WhatsApp contact. The search on the top righthand corner is intuitive.
 
 ## Fork & Clone the repo
-If you haven't already, fork the [this repo](https://github.com/dieechtenilente/coldmirrorapp/fork).
+If you haven't already, fork [this repo](https://github.com/dieechtenilente/coldmirrorapp/fork).
 
 ### Android Studio
 Clone the **coldmirror app** in Android Studio:
