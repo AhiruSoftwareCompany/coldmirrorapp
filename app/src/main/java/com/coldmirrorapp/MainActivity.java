@@ -239,11 +239,7 @@ public class MainActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.search:
-                if (searchField.getVisibility() == View.GONE) {
-                    modifySearch(false);
-                } else {
-                    modifySearch(true);
-                }
+                modifySearch(searchField.getVisibility() != View.GONE)
                 break;
             case R.id.stop:
                 stop();
