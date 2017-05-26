@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.content.FileProvider;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -66,6 +67,7 @@ public class MainActivity extends Activity {
             new Quote(Category.random, "coldmirrormachtpornos", "Coldmirror macht Pornos"),
             new Quote(Category.random, "fickmichblick", "\'Fick mich\' Blick"),
             new Quote(Category.random, "hi1", "Hiii 1"),
+            new Quote(Category.random, "hohotitten", "Höhö, Titten."),
             new Quote(Category.random, "istdasnichtgenial", "Ist das nicht genial?"),
             new Quote(Category.random, "kindheitgeloescht", "Kindheitserinnerung gelöscht"),
             new Quote(Category.random, "krankenwagen", "Krankenwagen"),
@@ -154,6 +156,7 @@ public class MainActivity extends Activity {
                             .setChooserTitle(getResources().getText(R.string.share))
                             .createChooserIntent()
                             .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
                     ma.startActivity(intent);
 
                 } catch (IOException e) {
@@ -205,6 +208,7 @@ public class MainActivity extends Activity {
             mediaPlayer.start();
 
         } catch (Exception e) {
+            Log.e("Error with quote: '" + q.getId() + "'", "" + e);
             Toast.makeText(this, R.string.notworking, Toast.LENGTH_SHORT).show();
         }
     }
@@ -239,7 +243,7 @@ public class MainActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.search:
-                modifySearch(searchField.getVisibility() != View.GONE)
+                modifySearch(searchField.getVisibility() != View.GONE);
                 break;
             case R.id.stop:
                 stop();
