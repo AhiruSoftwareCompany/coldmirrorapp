@@ -3,6 +3,7 @@ package com.coldmirrorapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,6 +32,8 @@ public class MainActivity extends Activity {
     private GridView quoteList;
     private MediaPlayer mediaPlayer;
     private boolean doubleBackToExitPressedOnce;
+    private SharedPreferences shPrefs;
+    private SharedPreferences.Editor shPrefsEdit;
 
     Quote[] quoteArray = {
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf der Stirn"),
@@ -84,6 +87,8 @@ public class MainActivity extends Activity {
         searchField = (SearchView) findViewById(R.id.searchField);
         quoteList = (GridView) findViewById(R.id.quoteList);
         modifySearch(true);
+        shPrefs = getSharedPreferences("stats", 0);
+        shPrefsEdit = shPrefs.edit();
 
         searchField.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
@@ -211,6 +216,11 @@ public class MainActivity extends Activity {
             Log.e("Error with quote: '" + q.getId() + "'", "" + e);
             Toast.makeText(this, R.string.notworking, Toast.LENGTH_SHORT).show();
         }
+
+
+        shPrefsEdit.putInt(q.getId(), shPrefs.getInt(q.getId(), 0) + 1);
+        shPrefsEdit.commit();
+        Log.d("Play sound", q.getId() + " wurde schon " + shPrefs.getInt(q.getId(), 0) + " mal gespielt.");
     }
 
     public void stop() {
