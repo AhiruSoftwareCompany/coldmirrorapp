@@ -4,12 +4,12 @@
         android:id="@+id/stop"
         android:icon="@android:drawable/ic_media_pause"
         android:showAsAction="always"
-        android:title="@string/menu_stop" />
+        android:title="@string/menuStop" />
     <item
         android:id="@+id/search"
         android:icon="@android:drawable/ic_search_category_default"
         android:showAsAction="always"
-        android:title="@string/menu_search" />
+        android:title="@string/menuSearch" />
     <item
         android:id="@+id/about"
         android:title="@string/about"

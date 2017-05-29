@@ -217,13 +217,13 @@ public class MainActivity extends Activity {
 
         } catch (Exception e) {
             Log.e("Error with quote: '" + q.getId() + "'", "" + e);
-            Toast.makeText(this, R.string.notworking, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.notWorking, Toast.LENGTH_SHORT).show();
         }
 
 
         shPrefsEdit.putInt(q.getId(), shPrefs.getInt(q.getId(), 0) + 1);
         shPrefsEdit.commit();
-        Log.d("Play sound", q.getId() + " wurde schon " + shPrefs.getInt(q.getId(), 0) + " mal gespielt.");
+        Log.d("Play sound", q.getId() + " was played " + shPrefs.getInt(q.getId(), 0) + " times before");
     }
 
     public void stop() {
@@ -263,8 +263,8 @@ public class MainActivity extends Activity {
                 break;
             case R.id.about:
                 AlertDialog.Builder b = new AlertDialog.Builder(this);
-                b.setTitle(R.string.aboutlong);
-                b.setMessage(R.string.abouttext);
+                b.setTitle(R.string.aboutLong);
+                b.setMessage(R.string.aboutText);
 
                 AlertDialog d = b.show();
                 TextView messageView = (TextView) d.findViewById(android.R.id.message);
@@ -289,7 +289,7 @@ public class MainActivity extends Activity {
         }
 
         doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, R.string.PressAgainToLeave, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.pressAgainToLeave, Toast.LENGTH_SHORT).show();
 
         new Handler().postDelayed(new Runnable() {
             @Override
