@@ -1,6 +1,7 @@
 package com.coldmirrorapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,12 +12,14 @@ import android.os.Handler;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -257,6 +260,17 @@ public class MainActivity extends Activity {
                 break;
             case R.id.stop:
                 stop();
+                break;
+            case R.id.about:
+                AlertDialog.Builder b = new AlertDialog.Builder(this);
+                b.setTitle(R.string.aboutlong);
+                b.setMessage(R.string.abouttext);
+
+                AlertDialog d = b.show();
+                TextView messageView = (TextView) d.findViewById(android.R.id.message);
+                TextView titleView = (TextView) d.findViewById(getResources().getIdentifier("alertTitle", "id", "android"));
+                messageView.setGravity(Gravity.CENTER);
+                titleView.setGravity(Gravity.CENTER);
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -8,4 +8,7 @@
     <string name="notworking">Das geht nicht!</string>
     <string name="PressAgainToLeave">Drücke erneut \'zurück\', um die App zu schließen.</string>
     <string name="share">Spruch weiterleiten …</string>
+    <string name="about">Über …</string>
+    <string name="aboutlong">Über diese App</string>
+    <string name="abouttext">Made with ❤️ in Germany\n(c) 2017 Klaus Hackner</string>
 </resources>
