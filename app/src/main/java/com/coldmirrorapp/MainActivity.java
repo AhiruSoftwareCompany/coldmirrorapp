@@ -192,6 +192,7 @@ public class MainActivity extends Activity {
         QuoteAdapter quoteAdapter = new QuoteAdapter(this, new ArrayList<Quote>());
         quoteList.setAdapter(quoteAdapter);
 
+
         for (Quote aQuoteArray : quoteArray) {
             if (filter != null) {
                 if (aQuoteArray.getName().toLowerCase().contains(filter.toLowerCase())) {
