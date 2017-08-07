@@ -98,7 +98,7 @@ Anyone and everyone is welcome to contribute e.g. sounds (with YouTube source).
 ## Sources/Adaptions
 Readme adapted from [Esri](https://github.com/Esri/arcgis-runtime-samples-android)
 
-##Licensing
+## Licensing
 
 This project stands unter the MIT-License. Bear in mind that the sounds and pictures used in this project have their own license!
 
