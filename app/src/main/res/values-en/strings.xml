@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Coldmirror Soundboard</string>
 
     <string name="menuSearch">Search</string>
     <string name="menuStop">Stop</string>
@@ -10,5 +9,4 @@
     <string name="share">Share  …quote</string>
     <string name="about">About …</string>
     <string name="aboutLong">About this app</string>
-    <string name="aboutText">Made with ❤️ in Germany\n(c) 2017 Klaus Hackner</string>
 </resources>
