@@ -145,7 +145,6 @@ public class MainActivity extends Activity {
                         final InputStream inputStream = getResources().openRawResource(getResources().getIdentifier(qa.getItem(position).getId(), "raw", getPackageName()));
                         final FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
 
-
                         byte buf[] = new byte[1024];
                         int len;
 
@@ -192,7 +191,6 @@ public class MainActivity extends Activity {
     public void addQuotesToList(String filter) {
         QuoteAdapter quoteAdapter = new QuoteAdapter(this, new ArrayList<Quote>());
         quoteList.setAdapter(quoteAdapter);
-
 
         for (Quote aQuoteArray : quoteArray) {
             if (filter != null) {
