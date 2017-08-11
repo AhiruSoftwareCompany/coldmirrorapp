@@ -78,6 +78,7 @@ public class MainActivity extends Activity {
             new Quote(Category.random, "kindheitgeloescht", "Kindheitserinnerung gelöscht"),
             new Quote(Category.random, "krankenwagen", "Krankenwagen"),
             new Quote(Category.random, "lache1", "Lache 1"),
+            new Quote(Category.random, "schuldigung", "Schuldigung"),
             new Quote(Category.random, "sodummkanndiedochnichtsein", "So dumm kann die doch nicht sein"),
             new Quote(Category.random, "sotalentiert", "So talentiert"),
             new Quote(Category.random, "unzufrieden", "Unzufriedenes Volk")};
