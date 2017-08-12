@@ -12,12 +12,9 @@ import java.util.ArrayList;
 
 class QuoteAdapter extends ArrayAdapter<Quote> {
 
-    private QuoteAdapter qa;
-    private Quote quote;
-
     QuoteAdapter(Context context, ArrayList<Quote> arrayList) {
         super(context, R.layout.quotes_items, arrayList);
-        qa = this;
+        QuoteAdapter qa = this;
     }
 
     @Override
@@ -25,9 +22,9 @@ class QuoteAdapter extends ArrayAdapter<Quote> {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
         View v = inflater.inflate(R.layout.quotes_items, parent, false);
-        quote = getItem(position);
+        Quote quote = getItem(position);
 
-        Button quoteName = (Button) v.findViewById(R.id.quoteName);
+        Button quoteName = v.findViewById(R.id.quoteName);
         quoteName.setText(quote.getName());
         quoteName.setTextColor(Color.parseColor(quote.getColor()));
 

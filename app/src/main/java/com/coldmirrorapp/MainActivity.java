@@ -27,6 +27,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends Activity {
     private SearchView searchField;
@@ -38,61 +39,20 @@ public class MainActivity extends Activity {
     private SharedPreferences shPrefs;
     private SharedPreferences.Editor shPrefsEdit;
 
-    Quote[] quoteArray = {
-            new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf der Stirn"),
-            new Quote(Category.harrypotter, "geilekarten", "Geile Karten"),
-            new Quote(Category.harrypotter, "hellemal", "Das helle Mal"),
-            new Quote(Category.harrypotter, "irischeiren", "Irische Iren"),
-            new Quote(Category.harrypotter, "istderhaesslich", "Ist der hässlich"),
-            new Quote(Category.harrypotter, "jetztsindsiealletot", "Jetzt sind sie alle tot."),
-            new Quote(Category.harrypotter, "joghurt", "Joghurt"),
-            new Quote(Category.harrypotter, "journalist1", "Ich als Journalist"),
-            new Quote(Category.harrypotter, "journalist2", "Ich als Journalist 2"),
-            new Quote(Category.harrypotter, "keinetraenen", "Keine Tränen"),
-            new Quote(Category.harrypotter, "lutschen", "Lutschen!"),
-            new Quote(Category.harrypotter, "nicerdumbledore", "Netter Dumbledore"),
-            new Quote(Category.harrypotter, "normalersatzbau", "Normaler lateinischer Satzbau"),
-            new Quote(Category.harrypotter, "purezauberei", "Pure Zauberei"),
-            new Quote(Category.harrypotter, "schlechterfilm", "Schlechter Film"),
-            new Quote(Category.harrypotter, "schwulbullshit", "Schwul, Bullshit"),
-            new Quote(Category.harrypotter, "sogebildet", "So Gebildet"),
-            new Quote(Category.harrypotter, "tannenzapfen", "Tannenzapfen."),
-            new Quote(Category.harrypotter, "toastrack", "Toast Rack"),
-            new Quote(Category.harrypotter, "topbesetzung", "Top Besetzung"),
-            new Quote(Category.harrypotter, "volldumm", "Ah, voll dumm"),
-            new Quote(Category.harrypotter, "yaytot", "Yay, Tot :)"),
-            new Quote(Category.avengers, "bratwurstmitsenf", "Bratwurst mit Senf"),
-            new Quote(Category.avengers, "einbausparvertrag", "Sweet, ein Bausparvertrag"),
-            new Quote(Category.avengers, "ichhabnstander", "Ich hab n Ständer"),
-            new Quote(Category.avengers, "nebanane", "Ne Banane"),
-            new Quote(Category.avengers, "nice", "Nice"),
-            new Quote(Category.avengers, "wasistdeinlieblingstrinken", "Was ist dein Lieblingsgetränk"),
-            new Quote(Category.random, "ahahahalustig", "Ahahaha Lustig!"),
-            new Quote(Category.random, "boahistdaslustig", "Boah ist das lustig"),
-            new Quote(Category.random, "brutalekillerspiele", "Grund: Brutale Killerspiele"),
-            new Quote(Category.random, "coldmirrormachtpornos", "Coldmirror macht Pornos"),
-            new Quote(Category.random, "fickmichblick", "\'Fick mich\' Blick"),
-            new Quote(Category.random, "hi1", "Hiii 1"),
-            new Quote(Category.random, "hohotitten", "Höhö, Titten."),
-            new Quote(Category.random, "istdasnichtgenial", "Ist das nicht genial?"),
-            new Quote(Category.random, "kindheitgeloescht", "Kindheitserinnerung gelöscht"),
-            new Quote(Category.random, "krankenwagen", "Krankenwagen"),
-            new Quote(Category.random, "lache1", "Lache 1"),
-            new Quote(Category.random, "schuldigung", "Schuldigung"),
-            new Quote(Category.random, "sodummkanndiedochnichtsein", "So dumm kann die doch nicht sein"),
-            new Quote(Category.random, "sotalentiert", "So talentiert"),
-            new Quote(Category.random, "unzufrieden", "Unzufriedenes Volk")};
+    private Quote[] quoteArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        quoteArray = Quote.getAll();
 
-        searchField = (SearchView) findViewById(R.id.searchField);
-        quoteList = (GridView) findViewById(R.id.quoteList);
+        searchField = findViewById(R.id.searchField);
+        quoteList = findViewById(R.id.quoteList);
         modifySearch(true);
         shPrefs = getSharedPreferences("stats", 0);
         shPrefsEdit = shPrefs.edit();
+
 
         searchField.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
@@ -138,7 +98,7 @@ public class MainActivity extends Activity {
                 ///TODO: Copy files to cache dir instead of files dir
                 File imageFile = new File(getFilesDir().getPath() + "/" + filename);
 
-                Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileprovider", getApplication().getPackageName()), imageFile);
+                Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileProvider", getApplication().getPackageName()), imageFile);
 
                 try {
                     if (!imageFile.exists()) {
@@ -175,7 +135,7 @@ public class MainActivity extends Activity {
         });
     }
 
-    public void modifySearch(boolean clear) {
+    private void modifySearch(boolean clear) {
         if (clear) {
             searchField.setVisibility(View.GONE);
             searchField.setIconified(true);
@@ -188,7 +148,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void addQuotesToList(String filter) {
+    private void addQuotesToList(String filter) {
         QuoteAdapter quoteAdapter = new QuoteAdapter(this, new ArrayList<Quote>());
         quoteList.setAdapter(quoteAdapter);
 
@@ -203,7 +163,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    public void play(Quote q) {
+    private void play(Quote q) {
         try {
             int resId = getResources().getIdentifier(q.getId(), "raw", getPackageName());
             mediaPlayer = MediaPlayer.create(this, resId);
@@ -226,7 +186,7 @@ public class MainActivity extends Activity {
         Log.d("Play sound", q.getId() + " was played " + shPrefs.getInt(q.getId(), 0) + " times before");
     }
 
-    public void stop() {
+    private void stop() {
         try {
             if (mediaPlayer != null) {
                 mediaPlayer.pause();
@@ -267,8 +227,8 @@ public class MainActivity extends Activity {
                 b.setMessage(R.string.aboutText);
 
                 AlertDialog d = b.show();
-                TextView messageView = (TextView) d.findViewById(android.R.id.message);
-                TextView titleView = (TextView) d.findViewById(getResources().getIdentifier("alertTitle", "id", "android"));
+                TextView messageView = d.findViewById(android.R.id.message);
+                TextView titleView = d.findViewById(getResources().getIdentifier("alertTitle", "id", "android"));
                 messageView.setGravity(Gravity.CENTER);
                 titleView.setGravity(Gravity.CENTER);
                 break;
