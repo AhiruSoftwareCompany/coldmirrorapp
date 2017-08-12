@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Coldmirror Soundboard</string>
-
-    <string name="menuSearch">Suche</string>
-    <string name="menuStop">Stop</string>
-    <string name="search">Nach Spruch suchen</string>
-    <string name="notWorking">Das geht nicht!</string>
-    <string name="pressAgainToLeave">Drücke erneut \'zurück\', um die App zu schließen.</string>
-    <string name="share">Spruch weiterleiten …</string>
-    <string name="about">Über …</string>
-    <string name="aboutLong">Über diese App</string>
     <string name="aboutText" translatable="false">Made with ❤️ in Germany\n© 2017 Klaus Hackner</string>
+    <string name="menuSearch">Search</string>
+    <string name="menuStop">Stop</string>
+    <string name="search">Search for quote</string>
+    <string name="notWorking">That\'s not working!</string>
+    <string name="pressAgainToLeave">Press \'back\' again to leave.</string>
+    <string name="share">Share  …quote</string>
+    <string name="about">About …</string>
+    <string name="aboutLong">About this app</string>
+    <string name="random">random</string>
 </resources>

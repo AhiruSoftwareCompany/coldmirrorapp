@@ -1,6 +1,8 @@
 package com.coldmirrorapp;
 
 import java.util.Arrays;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 class Quote {
     private String id;
@@ -92,6 +94,10 @@ class Quote {
 
     public static Quote[] getAll() {
         return quoteArray;
+    }
+
+    public static Quote getRandom() {
+        return quoteArray[(int) (Math.random() * ((quoteArray.length) + 1))];
     }
 
 }

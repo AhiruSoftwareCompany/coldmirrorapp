@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="menuSearch">Search</string>
-    <string name="menuStop">Stop</string>
-    <string name="search">Search for quote</string>
-    <string name="notWorking">That\'s not working!</string>
-    <string name="pressAgainToLeave">Press \'back\' again to leave.</string>
-    <string name="share">Share  …quote</string>
-    <string name="about">About …</string>
-    <string name="aboutLong">About this app</string>
+
 </resources>

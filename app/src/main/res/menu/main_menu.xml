@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/random"
+        android:icon="@android:drawable/ic_menu_help"
+        android:showAsAction="always"
+        android:title="@string/random"
+        android:visible="true" />
+    <item
         android:id="@+id/stop"
         android:icon="@android:drawable/ic_media_pause"
-        android:showAsAction="ifRoom"
-        android:title="@string/menuStop" />
+        android:showAsAction="always"
+        android:title="@string/menuStop"
+        android:visible="false" />
     <item
         android:id="@+id/search"
         android:icon="@android:drawable/ic_search_category_default"
-        android:showAsAction="ifRoom"
-        android:title="@string/menuSearch" />
+        android:showAsAction="always"
+        android:title="@string/menuSearch"
+        android:visible="true" />
     <item
         android:id="@+id/about"
+        android:showAsAction="never"
         android:title="@string/about"
-        />
+        android:visible="true" />
 
 </menu>
 

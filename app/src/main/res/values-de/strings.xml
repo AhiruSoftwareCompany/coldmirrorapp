@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about">Über …</string>
+    <string name="aboutLong">Über diese App</string>
+    <string name="menuSearch">Suche</string>
+    <string name="menuStop">Stop</string>
+    <string name="notWorking">Das geht nicht!</string>
+    <string name="pressAgainToLeave">Drücke erneut \'zurück\', um die App zu schließen.</string>
+    <string name="random">Zufällig</string>
+    <string name="search">Nach Spruch suchen</string>
+    <string name="share">Spruch weiterleiten …</string>
+</resources>

@@ -16,6 +16,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SearchView;
@@ -220,6 +221,9 @@ public class MainActivity extends Activity {
                 break;
             case R.id.stop:
                 stop();
+                break;
+            case R.id.random:
+                play(Quote.getRandom());
                 break;
             case R.id.about:
                 AlertDialog.Builder b = new AlertDialog.Builder(this);
