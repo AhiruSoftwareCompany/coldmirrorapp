@@ -21,6 +21,7 @@ class Quote {
             new Quote(Category.harrypotter, "journalist2", "Ich als Journalist 2"),
             new Quote(Category.harrypotter, "keinetraenen", "Keine Tränen"),
             new Quote(Category.harrypotter, "lutschen", "Lutschen!"),
+            new Quote(Category.harrypotter, "newstime", "Newstime!"),
             new Quote(Category.harrypotter, "nicerdumbledore", "Netter Dumbledore"),
             new Quote(Category.harrypotter, "normalersatzbau", "Normaler lateinischer Satzbau"),
             new Quote(Category.harrypotter, "purezauberei", "Pure Zauberei"),
@@ -31,6 +32,7 @@ class Quote {
             new Quote(Category.harrypotter, "toastrack", "Toast Rack"),
             new Quote(Category.harrypotter, "topbesetzung", "Top Besetzung"),
             new Quote(Category.harrypotter, "volldumm", "Ah, voll dumm"),
+            new Quote(Category.harrypotter, "wow", "Wow."),
             new Quote(Category.harrypotter, "yaytot", "Yay, Tot :)"),
             new Quote(Category.avengers, "bratwurstmitsenf", "Bratwurst mit Senf"),
             new Quote(Category.avengers, "einbausparvertrag", "Sweet, ein Bausparvertrag"),
@@ -70,7 +72,6 @@ class Quote {
             new Quote(Category.random, "unzufrieden", "Unzufriedenes Volk"),
             new Quote(Category.random, "verpruegeln", "Verprügeln"),
             new Quote(Category.random, "witz", "Witz"),
-            new Quote(Category.random, "wow", "Wow."),
             new Quote(Category.random, "zwanzigprozentwenigerfett", "20% weniger\nFett!")};
 
 
