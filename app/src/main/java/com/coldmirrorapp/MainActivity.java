@@ -16,7 +16,6 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SearchView;
@@ -28,7 +27,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MainActivity extends Activity {
     private SearchView searchField;
@@ -53,7 +51,6 @@ public class MainActivity extends Activity {
         modifySearch(true);
         shPrefs = getSharedPreferences("stats", 0);
         shPrefsEdit = shPrefs.edit();
-
 
         searchField.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
@@ -184,7 +181,7 @@ public class MainActivity extends Activity {
 
         shPrefsEdit.putInt(q.getId(), shPrefs.getInt(q.getId(), 0) + 1);
         shPrefsEdit.commit();
-        Log.d("Play sound", q.getId() + " was played " + shPrefs.getInt(q.getId(), 0) + " times before");
+        Log.d("Play sound", q.getId() + " was played " + shPrefs.getInt(q.getId(), 0) + " time(s)");
     }
 
     private void stop() {

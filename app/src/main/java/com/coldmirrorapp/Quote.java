@@ -5,10 +5,6 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 class Quote {
-    private String id;
-    private String name;
-    private Category category;
-
     private static Quote[] quoteArray = {
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf der Stirn"),
             new Quote(Category.harrypotter, "geilekarten", "Geile Karten"),
@@ -73,12 +69,23 @@ class Quote {
             new Quote(Category.random, "verpruegeln", "Verprügeln"),
             new Quote(Category.random, "witz", "Witz"),
             new Quote(Category.random, "zwanzigprozentwenigerfett", "20% weniger\nFett!")};
+    private String id;
+    private String name;
+    private Category category;
 
 
     Quote(Category category, String id, String name) {
         this.category = category;
         this.id = id;
         this.name = name;
+    }
+
+    public static Quote[] getAll() {
+        return quoteArray;
+    }
+
+    public static Quote getRandom() {
+        return quoteArray[(int) (Math.random() * ((quoteArray.length) + 1))];
     }
 
     String getColor() {
@@ -96,14 +103,6 @@ class Quote {
     @Override
     public String toString() {
         return name;
-    }
-
-    public static Quote[] getAll() {
-        return quoteArray;
-    }
-
-    public static Quote getRandom() {
-        return quoteArray[(int) (Math.random() * ((quoteArray.length) + 1))];
     }
 
 }
