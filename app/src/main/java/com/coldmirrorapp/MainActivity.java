@@ -27,6 +27,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends Activity {
     private SearchView searchField;
@@ -177,7 +178,6 @@ public class MainActivity extends Activity {
             Log.e("Error with quote: '" + q.getId() + "'", "" + e);
             Toast.makeText(this, R.string.notWorking, Toast.LENGTH_SHORT).show();
         }
-
 
         shPrefsEdit.putInt(q.getId(), shPrefs.getInt(q.getId(), 0) + 1);
         shPrefsEdit.commit();

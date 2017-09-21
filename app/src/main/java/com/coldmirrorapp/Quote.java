@@ -1,9 +1,5 @@
 package com.coldmirrorapp;
 
-import java.util.Arrays;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
-
 class Quote {
     private static Quote[] quoteArray = {
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf der Stirn"),
@@ -53,8 +49,8 @@ class Quote {
             new Quote(Category.random, "keingeld", "Kein Geld"),
             new Quote(Category.random, "kindheitgeloescht", "Kindheitserinnerung gelöscht"),
             new Quote(Category.random, "krankenwagen", "Krankenwagen"),
-            new Quote(Category.random, "lache", "Lache"),
-            new Quote(Category.random, "lache1", "Lache 1"),
+            new Quote(Category.random, "lache", "Lache 1"),
+            new Quote(Category.random, "lache1", "Lache 2"),
             new Quote(Category.random, "langerbalken", "Langer, breiter\nBalken"),
             new Quote(Category.random, "richtiglame", "Richtig\nl a m e"),
             new Quote(Category.random, "ruelps", "Rülps"),
