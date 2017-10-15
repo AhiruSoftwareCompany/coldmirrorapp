@@ -9,7 +9,7 @@ class Quote {
             new Quote(Category.harrypotter, "istderhaesslich", "Ist der hässlich"),
             new Quote(Category.harrypotter, "jetztsindsiealletot", "Jetzt sind sie alle tot."),
             new Quote(Category.harrypotter, "joghurt", "Joghurt"),
-            new Quote(Category.harrypotter, "journalist1", "Ich als Journalist"),
+            new Quote(Category.harrypotter, "journalist1", "Ich als Journalist 1"),
             new Quote(Category.harrypotter, "journalist2", "Ich als Journalist 2"),
             new Quote(Category.harrypotter, "keinetraenen", "Keine Tränen"),
             new Quote(Category.harrypotter, "lutschen", "Lutschen!"),
@@ -64,7 +64,12 @@ class Quote {
             new Quote(Category.random, "unzufrieden", "Unzufriedenes Volk"),
             new Quote(Category.random, "verpruegeln", "Verprügeln"),
             new Quote(Category.random, "witz", "Witz"),
-            new Quote(Category.random, "zwanzigprozentwenigerfett", "20% weniger\nFett!")};
+            new Quote(Category.random, "zwanzigprozentwenigerfett", "20% weniger\nFett!"),
+            new Quote(Category.tatort, "erstaunlich", "Erstaunlich"),
+            new Quote(Category.tatort, "ichwolltenichtkommen", "Ich wollte nicht kommen"),
+            new Quote(Category.tatort, "kuckmalderweltraum", "Kuck mal, der Weltraum"),
+            new Quote(Category.tatort, "spassundaction", "Spaß und Action wird groß geschrieben"),
+            new Quote(Category.tatort, "tachdusackfalte", "Tach, du Sackfalte")};
     private String id;
     private String name;
     private Category category;
