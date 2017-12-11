@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
         applicationId "com.coldmirrorapp"
-        targetSdkVersion 26
+        targetSdkVersion 27
         minSdkVersion 15
     }
 
@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    compile 'com.google.android.gms:play-services-appindexing:9.8.0'
-    compile 'com.android.support:support-v4:26.0.0-alpha1'
+    compile 'com.google.firebase:firebase-appindexing:11.6.2'
+    compile 'com.android.support:support-v4:27.0.2'
 }
