@@ -10,5 +10,7 @@
     <string name="share">Share  …quote</string>
     <string name="about">About …</string>
     <string name="aboutLong">About this app</string>
-    <string name="random">random</string>
+    <string name="random">Random</string>
+    <string name="appwidget_text" translatable="false">Coldmirror Sound</string>
+    <string name="add_widget">Add widget</string>
 </resources>

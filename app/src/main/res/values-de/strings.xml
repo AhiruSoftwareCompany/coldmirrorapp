@@ -5,8 +5,9 @@
     <string name="menuSearch">Suche</string>
     <string name="menuStop">Stop</string>
     <string name="notWorking">Das geht nicht!</string>
-    <string name="pressAgainToLeave">Drücke erneut \'zurück\', um die App zu schließen.</string>
+    <string name="pressAgainToLeave">Drücke erneut \'Zurück\', um die App zu schließen.</string>
     <string name="random">Zufällig</string>
     <string name="search">Nach Spruch suchen</string>
     <string name="share">Spruch weiterleiten …</string>
+    <string name="add_widget">Widget hinzufügen</string>
 </resources>
