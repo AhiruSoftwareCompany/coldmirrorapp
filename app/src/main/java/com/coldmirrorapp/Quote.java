@@ -3,11 +3,14 @@ package com.coldmirrorapp;
 class Quote {
     private static Quote[] quoteArray = {
             new Quote(Category.harrypotter, "abgeblitzt", "Abgeblitzt!"),
+            new Quote(Category.harrypotter, "absichtlicheschaedigung", "Absichtliche\nSchädigung""),
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf\nder Stirn"),
             new Quote(Category.harrypotter, "dasistunnoetigundzulang", "Das ist unnötig\nund zu lang"),
             new Quote(Category.harrypotter, "dayum", "Dayum!"),
+            new Quote(Category.harrypotter, "dubistgemeldetundblockiert", "Du bist gemeldet\nund blockiert!"),
             new Quote(Category.harrypotter, "einelampe", "eine Lampe"),
             new Quote(Category.harrypotter, "geilekarten", "Geile Karten"),
+            new Quote(Category.harrypotter, "genuggefreut", "Genug gefreut"),
             new Quote(Category.harrypotter, "hashtaggoennung", "#Gönnung"),
             new Quote(Category.harrypotter, "hellemal", "Das helle Mal"),
             new Quote(Category.harrypotter, "ichalseditor", "Ich als\nEditor"),
@@ -20,6 +23,7 @@ class Quote {
             new Quote(Category.harrypotter, "jetztsindsiealletot", "Jetzt sind sie\nalle tot."),
             new Quote(Category.harrypotter, "joghurt", "Joghurt"),
             new Quote(Category.harrypotter, "keinetraenen", "Keine Tränen"),
+            new Quote(Category.harrypotter, "laesteronispeziale", "Lästeroni Speziale"),
             new Quote(Category.harrypotter, "lutschen", "Lutschen!"),
             new Quote(Category.harrypotter, "newstime", "Newstime!"),
             new Quote(Category.harrypotter, "nicerdumbledore", "Netter Dumbledore"),
