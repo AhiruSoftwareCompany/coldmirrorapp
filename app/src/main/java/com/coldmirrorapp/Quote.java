@@ -3,7 +3,7 @@ package com.coldmirrorapp;
 class Quote {
     private static Quote[] quoteArray = {
             new Quote(Category.harrypotter, "abgeblitzt", "Abgeblitzt!"),
-            new Quote(Category.harrypotter, "absichtlicheschaedigung", "Absichtliche\nSchädigung""),
+            new Quote(Category.harrypotter, "absichtlicheschaedigung", "Absichtliche\nSchädigung"),
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf\nder Stirn"),
             new Quote(Category.harrypotter, "dasistunnoetigundzulang", "Das ist unnötig\nund zu lang"),
             new Quote(Category.harrypotter, "dayum", "Dayum!"),
