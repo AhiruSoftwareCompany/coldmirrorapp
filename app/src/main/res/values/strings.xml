@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Coldmirror Soundboard</string>
-    <string name="aboutText" translatable="false">Made with ❤️ in Germany\n© 2016-2018 DieEchteNilente</string>
+    <string name="aboutText" translatable="false">Made with ❤️ in Germany\n\nVergib\' uns unser Brot,\nauch wir vergeben dem Brot.\n\n© 2016 - 2018 DieEchteNilente</string>
     <string name="menuSearch">Search</string>
     <string name="menuStop">Stop</string>
     <string name="search">Search for quote</string>

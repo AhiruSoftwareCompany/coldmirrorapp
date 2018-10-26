@@ -4,16 +4,20 @@ class Quote {
     private static Quote[] quoteArray = {
             new Quote(Category.harrypotter, "abgeblitzt", "Abgeblitzt!"),
             new Quote(Category.harrypotter, "absichtlicheschaedigung", "Absichtliche\nSchädigung"),
+            new Quote(Category.harrypotter, "besseralsnichts", "Besser als\nnichts"),
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf\nder Stirn"),
             new Quote(Category.harrypotter, "dasistunnoetigundzulang", "Das ist unnötig\nund zu lang"),
             new Quote(Category.harrypotter, "dayum", "Dayum!"),
+            new Quote(Category.harrypotter, "dieantwortlautetja", "Die Antwortet\nlautet ja"),
             new Quote(Category.harrypotter, "dubistgemeldetundblockiert", "Du bist gemeldet\nund blockiert!"),
             new Quote(Category.harrypotter, "duoberpflaume", "Du\nOberpflaume"),
             new Quote(Category.harrypotter, "einelampe", "eine Lampe"),
             new Quote(Category.harrypotter, "geilekarten", "Geile Karten"),
             new Quote(Category.harrypotter, "genuggefreut", "Genug gefreut"),
             new Quote(Category.harrypotter, "hashtaggoennung", "#Gönnung"),
+            new Quote(Category.harrypotter, "hashtagrelatable", "#relatable"),
             new Quote(Category.harrypotter, "hellemal", "Das helle Mal"),
+            new Quote(Category.harrypotter, "howtobildung", "How to:\nBildung"),
             new Quote(Category.harrypotter, "ichalseditor", "Ich als\nEditor"),
             new Quote(Category.harrypotter, "ichalsjournalist1", "Ich als\nJournalist 1"),
             new Quote(Category.harrypotter, "ichalsjournalist2", "Ich als\nJournalist 2"),
@@ -34,11 +38,13 @@ class Quote {
             new Quote(Category.harrypotter, "schlechterfilm", "Schlechter Film"),
             new Quote(Category.harrypotter, "schwulbullshit", "Schwul, Bullshit"),
             new Quote(Category.harrypotter, "sogebildet", "So Gebildet"),
+            new Quote(Category.harrypotter, "sovielaufwand", "Ey, aber das ist\nso viel Anfwand"),
             new Quote(Category.harrypotter, "tannenzapfen", "Tannenzapfen."),
             new Quote(Category.harrypotter, "toastrack", "Toast Rack"),
             new Quote(Category.harrypotter, "topbesetzung", "Top Besetzung"),
             new Quote(Category.harrypotter, "volldumm", "Ah, voll dumm"),
             new Quote(Category.harrypotter, "wasdauertdenndasolange", "Was dauert denn\ndas so lange"),
+            new Quote(Category.harrypotter, "waszumgeiersteffi", "Was zum Geier\nSteffi??"),
             new Quote(Category.harrypotter, "wow", "Wow."),
             new Quote(Category.harrypotter, "yaytot", "Yay, Tot :)"),
             new Quote(Category.avengers, "bratwurstmitsenf", "Bratwurst mit Senf"),
@@ -89,6 +95,7 @@ class Quote {
             new Quote(Category.tatort, "kuckmalderweltraum", "Kuck mal, der Weltraum"),
             new Quote(Category.tatort, "spassundaction", "Spaß und Action wird groß geschrieben"),
             new Quote(Category.tatort, "tachdusackfalte", "Tach, du Sackfalte")};
+
     private String id;
     private String name;
     private Category category;
