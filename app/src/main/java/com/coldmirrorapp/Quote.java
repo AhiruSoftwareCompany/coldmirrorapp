@@ -46,6 +46,7 @@ class Quote {
             new Quote(Category.harrypotter, "wasdauertdenndasolange", "Was dauert denn\ndas so lange"),
             new Quote(Category.harrypotter, "waszumgeiersteffi", "Was zum Geier\nSteffi??"),
             new Quote(Category.harrypotter, "wow", "Wow."),
+            new Quote(Category.harrypotter, "wow2", "Wow."),
             new Quote(Category.harrypotter, "yaytot", "Yay, Tot :)"),
             new Quote(Category.avengers, "bratwurstmitsenf", "Bratwurst mit Senf"),
             new Quote(Category.avengers, "einbausparvertrag", "Sweet, ein Bausparvertrag"),
