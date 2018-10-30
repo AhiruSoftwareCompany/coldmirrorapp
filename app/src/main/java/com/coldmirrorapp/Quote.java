@@ -38,7 +38,7 @@ class Quote {
             new Quote(Category.harrypotter, "schlechterfilm", "Schlechter Film"),
             new Quote(Category.harrypotter, "schwulbullshit", "Schwul, Bullshit"),
             new Quote(Category.harrypotter, "sogebildet", "So Gebildet"),
-            new Quote(Category.harrypotter, "sovielaufwand", "Ey, aber das ist\nso viel Anfwand"),
+            new Quote(Category.harrypotter, "sovielaufwand", "Ey, aber das ist\nso viel Aufwand"),
             new Quote(Category.harrypotter, "tannenzapfen", "Tannenzapfen."),
             new Quote(Category.harrypotter, "toastrack", "Toast Rack"),
             new Quote(Category.harrypotter, "topbesetzung", "Top Besetzung"),
