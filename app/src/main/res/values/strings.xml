@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Coldmirror Soundboard</string>
-    <string name="aboutText" translatable="false">Made with ❤️ in Germany\n\nVergib\' uns unser Brot,\nauch wir vergeben dem Brot.\n\n© 2016 - 2018 DieEchteNilente</string>
+    <string name="aboutText" translatable="false">Made with ❤️ in Germany\n\nVergib\' uns unser Brot,\nauch wir vergeben dem Brot.\n\n© 2018 Ahiru Software</string>
     <string name="menuSearch">Search</string>
     <string name="menuStop">Stop</string>
     <string name="search">Search for quote</string>
     <string name="notWorking">That\'s not working!</string>
     <string name="pressAgainToLeave">Press \'back\' again to leave.</string>
-    <string name="share">Share  …quote</string>
+    <string name="share">Share quote …</string>
     <string name="about">About …</string>
     <string name="aboutLong">About this app</string>
     <string name="random">Random</string>
