@@ -1,7 +1,7 @@
 # coldmirrorapp
 A soundboard app with quotes and effects from [coldmirror](https://www.youtube.com/user/coldmirror) (German YouTuber)
 
-![https://play.google.com/apps/testing/com.coldmirrorapp](https://play.google.com/intl/en_us/badges/images/badge_new.png)
+[![https://play.google.com/apps/testing/com.coldmirrorapp](https://play.google.com/intl/en_us/badges/images/badge_new.png)](https://play.google.com/apps/testing/com.coldmirrorapp)
 
 ## Installing the coldmirrorapp
 If you do not want to download the app from an app store, you can use the following one.
