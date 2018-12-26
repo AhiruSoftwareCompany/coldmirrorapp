@@ -104,7 +104,7 @@ class Quote {
     private Category category;
 
 
-    Quote(Category category, String id, String name) {
+    public Quote(Category category, String id, String name) {
         this.category = category;
         this.id = id;
         this.name = name;
@@ -115,7 +115,7 @@ class Quote {
     }
 
     public static Quote getRandom() {
-        return quoteArray[(int) (Math.random() * ((quoteArray.length) + 1))];
+        return quoteArray[(int) (Math.random() * ((quoteArray.length)))];
     }
 
     String getColor() {
