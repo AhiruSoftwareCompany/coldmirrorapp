@@ -3,6 +3,11 @@ package com.coldmirrorapp;
 class Quote {
     private static Quote[] quoteArray = {
             new Quote(Category.harrypotter, "abgeblitzt", "Abgeblitzt!", "5 Minuten Harry Podcast #9"),
+            new Quote(Category.harrypotter, "auchdualtelady", "Auch du\nalte Lady", "5 Minuten Harry Podcast #5"),
+            new Quote(Category.harrypotter, "hagridwitz", "Hagrids\nWitz", "5 Minuten Harry Podcast #5"),
+            new Quote(Category.harrypotter, "radclifflachen", "Radcliff's\nLachen", "5 Minuten Harry Podcast #5"),
+            new Quote(Category.harrypotter, "soupsoupsoup", "Soup Soup Soup", "5 Minuten Harry Podcast #5"),
+            new Quote(Category.harrypotter, "suppenauswahl", "Suppenauswahl", "5 Minuten Harry Podcast #5"),
             new Quote(Category.harrypotter, "absichtlicheschaedigung", "Absichtliche\nSchädigung"),
             new Quote(Category.harrypotter, "achdumeinescheisse", "Ach du meine Scheiße!", "Harry Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "besseralsnichts", "Besser als\nnichts", "5 Minuten Harry Podcast #11"),
@@ -81,9 +86,11 @@ class Quote {
             new Quote(Category.random, "boahistdaslustig", "Boah ist \ndas lustig"),
             new Quote(Category.random, "brutalekillerspiele", "Grund: Brutale Killerspiele"),
             new Quote(Category.random, "coldmirrormachtpornos", "Coldmirror macht Pornos"),
+            new Quote(Category.random, "daswaerbescheuert", "Das wär\nbescheuert", "How to Video Video #2 - Drehbuch (der Film im Kopf)"),
             new Quote(Category.random, "dumm", "Dumm!"),
             new Quote(Category.random, "durchnefetteexplosion", "Durch ne fette Explosion", "StarStarSpace #21"),
             new Quote(Category.random, "fickmichblick", "\'Fick mich\' Blick"),
+            new Quote(Category.random, "fuerbesondereleute", "Für besondere\nLeute", "hr Videowettbewerb \"Du führst Regie\""),
             new Quote(Category.random, "hahagay", "Haha, das ist gay."),
             new Quote(Category.random, "hi1", "Hiii 1"),
             new Quote(Category.random, "hi2", "Hiii 2"),
