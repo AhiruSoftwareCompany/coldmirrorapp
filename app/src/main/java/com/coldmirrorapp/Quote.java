@@ -81,6 +81,7 @@ class Quote {
             new Quote(Category.avengers, "nebanane", "Ne Banane"),
             new Quote(Category.avengers, "nice", "Nice"),
             new Quote(Category.avengers, "wasistdeinlieblingstrinken", "Was ist dein Lieblingsgetränk"),
+            new Quote(Category.japanoschlampen, "komischerklaus", "Komischer Klaus", "Japanoschlampen #35 - Alte und neue Rivalen"),
             new Quote(Category.random, "aequitasbitch", "Was macht\naequitas hier?"),
             new Quote(Category.random, "ahahahalustig", "Ahahaha Lustig!"),
             new Quote(Category.random, "boahistdaslustig", "Boah ist \ndas lustig"),
