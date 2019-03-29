@@ -1,17 +1,21 @@
 # coldmirrorapp
 A soundboard app with quotes and effects from [coldmirror](https://www.youtube.com/user/coldmirror) (German YouTuber)
 
-## Installing the coldmirrorapp
-Download the [coldmirror.apk](https://github.com/dieechtenilente/coldmirrorapp/releases) and copy it to your android phone. Open the file browser and navigate to the apk file. To install it, click on it and accept the warning. Enjoy the app :)
+[![https://play.google.com/apps/testing/com.coldmirrorapp](https://play.google.com/intl/en_us/badges/images/badge_new.png)](https://play.google.com/apps/testing/com.coldmirrorapp)
 
-![](https://raw.githubusercontent.com/dieechtenilente/coldmirrorapp/master/screenshots/screenshot1.png)
-![](https://raw.githubusercontent.com/dieechtenilente/coldmirrorapp/master/screenshots/screenshot2.png)
+## Installing the coldmirrorapp
+If you do not want to download the app from an app store, you can use the following one.
+
+Download the [coldmirror.apk](https://github.com/AhiruSoftwareCompany/coldmirrorapp/releases) and copy it to your android phone. Open the file browser and navigate to the apk file. To install it, click on it and accept the warning. Enjoy the app :)
+
+![](https://raw.githubusercontent.com/AhiruSoftwareCompany/coldmirrorapp/master/screenshots/screenshot1.png)
+![](https://raw.githubusercontent.com/AhiruSoftwareCompany/coldmirrorapp/master/screenshots/screenshot2.png)
 
 ## Using the coldmirrorapp
 Clicking on a button plays the wanted sound, long press opens a share dialog to share the sound e.g. to a WhatsApp contact. The search on the top righthand corner is intuitive.
 
 ## Fork & Clone the repo
-If you haven't already, fork [this repo](https://github.com/dieechtenilente/coldmirrorapp/fork).
+If you haven't already, fork [this repo](https://github.com/AhiruSoftwareCompany/coldmirrorapp/fork).
 
 ### Android Studio
 Clone the **coldmirror app** in Android Studio:
@@ -46,7 +50,7 @@ origin	https://github.com/YOUR_USERNAME/coldmirrorapp.git (push)
 - Specify a new remote upstream repository
 
 ```
-$ git remote add upstream https://github.com/dieechtenilente/coldmirrorapp.git
+$ git remote add upstream https://github.com/AhiruSoftwareCompany/coldmirrorapp.git
 ```
 
 - Verify the new upstream repository
@@ -56,8 +60,8 @@ $ git remote -v
 
 origin	https://github.com/YOUR_USERNAME/coldmirrorapp.git (fetch)
 origin	https://github.com/YOUR_USERNAME/coldmirrorapp.git (push)
-upstream https://github.com/dieechtenilente/coldmirrorapp.git (fetch)
-upstream https://github.com/dieechtenilente/coldmirrorapp.git (push)
+upstream https://github.com/AhiruSoftwareCompany/coldmirrorapp.git (fetch)
+upstream https://github.com/AhiruSoftwareCompany/coldmirrorapp.git (push)
 ```
 
 ### Sync your fork
@@ -105,4 +109,4 @@ This project stands unter the MIT-License. Bear in mind that the sounds and pict
 Widget-Button: [aiconica.net](http://aiconica.net/detail/play-533)
 
 ### 4 oki
-[mp3](https://github.com/dieechtenilente/coldmirrorapp/tree/master/app/src/main/res/raw)
+[mp3](https://github.com/AhiruSoftwareCompany/coldmirrorapp/tree/master/app/src/main/res/raw)
