@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.PopupMenu;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +28,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class MainActivity extends Activity {
     private SearchView searchField;
@@ -91,47 +91,84 @@ public class MainActivity extends Activity {
         quoteList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                QuoteAdapter qa = (QuoteAdapter) parent.getAdapter();
-                String filename = String.format("%s.mp3", qa.getItem(position).getId());
+                final AdapterView<?> aVP = parent; // AdapterView Parent
+                final int pos = position;
 
-                ///TODO: Copy files to cache dir instead of files dir
-                File imageFile = new File(getFilesDir().getPath() + "/" + filename);
+                PopupMenu pM = new PopupMenu(ma, view);
+                pM.getMenu().add(Menu.FLAG_ALWAYS_PERFORM_CLOSE, 1, 1, getApplication().getString(R.string.share));
+              //  pM.getMenu().add(Menu.FLAG_ALWAYS_PERFORM_CLOSE, 2, 1, "Set as ringtone");
+                pM.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case 1: //Share quote
+                                return shareQuote(aVP, pos);
+                            case 2: //Set quote as ...
+                                QuoteAdapter qa = (QuoteAdapter) aVP.getAdapter();
+                                String filename = String.format("%s.mp3", qa.getItem(pos).getId());
 
-                Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileProvider", getApplication().getPackageName()), imageFile);
+                                ///TODO: Copy files to cache dir instead of files dir
+                                File imageFile = new File(getFilesDir().getPath() + "/" + filename);
 
-                try {
-                    if (!imageFile.exists()) {
-                        final InputStream inputStream = getResources().openRawResource(getResources().getIdentifier(qa.getItem(position).getId(), "raw", getPackageName()));
-                        final FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+                                Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileProvider", getApplication().getPackageName()), imageFile);
 
-                        byte buf[] = new byte[1024];
-                        int len;
 
-                        while ((len = inputStream.read(buf)) > 0) {
-                            outputStream.write(buf, 0, len);
+                               // RingtoneManager.setActualDefaultRingtoneUri(ma, RingtoneManager.TYPE_NOTIFICATION, uri);
+                                //System.out.println(RingtoneManager.getActualDefaultRingtoneUri(ma, RingtoneManager.TYPE_NOTIFICATION));
+
+
+
+                                break;
                         }
-
-                        outputStream.flush();
-                        outputStream.getFD().sync();
-                        outputStream.close();
-                        inputStream.close();
+                        return true;
                     }
-
-                    Intent intent = ShareCompat.IntentBuilder.from(ma)
-                            .setType("audio/*")
-                            .setStream(uri)
-                            .setChooserTitle(getResources().getText(R.string.share))
-                            .createChooserIntent()
-                            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
-                    ma.startActivity(intent);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                });
+                pM.show();
                 return true;
             }
         });
+    }
+
+    private boolean shareQuote(AdapterView<?> parent, int position){
+        QuoteAdapter qa = (QuoteAdapter) parent.getAdapter();
+        String filename = String.format("%s.mp3", qa.getItem(position).getId());
+
+        ///TODO: Copy files to cache dir instead of files dir
+        File imageFile = new File(getFilesDir().getPath() + "/" + filename);
+
+        Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileProvider", getApplication().getPackageName()), imageFile);
+
+        try {
+            if (!imageFile.exists()) {
+                final InputStream inputStream = getResources().openRawResource(getResources().getIdentifier(qa.getItem(position).getId(), "raw", getPackageName()));
+                final FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+
+                byte buf[] = new byte[1024];
+                int len;
+
+                while ((len = inputStream.read(buf)) > 0) {
+                    outputStream.write(buf, 0, len);
+                }
+
+                outputStream.flush();
+                outputStream.getFD().sync();
+                outputStream.close();
+                inputStream.close();
+            }
+
+            Intent intent = ShareCompat.IntentBuilder.from(ma)
+                    .setType("audio/*")
+                    .setStream(uri)
+                    .setChooserTitle(getResources().getText(R.string.share))
+                    .createChooserIntent()
+                    .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+            ma.startActivity(intent);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 
     private void modifySearch(boolean clear) {

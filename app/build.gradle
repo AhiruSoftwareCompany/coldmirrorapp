@@ -63,19 +63,13 @@ android {
             versionNameSuffix "-googleplay"
         }
     }
-/*
-    gradle.taskGraph.whenReady { taskGraph ->
-        if (taskGraph.hasTask(assembleDebug)) {
-            autoIncrementBuildNumber()
-        } else if (taskGraph.hasTask(assembleRelease)) {
-            autoIncrementBuildNumber()
-        }
-    }
 
-*/
-    
+    autoIncrementBuildNumber()
+
+
 }
 dependencies {
     implementation 'com.google.firebase:firebase-appindexing:17.1.0'
-    implementation 'com.android.support:support-v4:28.+' /* 28.+ means any version in the 28 major release */
+    implementation 'com.android.support:support-v4:28.+'
+    /* 28.+ means any version in the 28 major release */
 }
