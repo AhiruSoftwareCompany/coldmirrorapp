@@ -1,15 +1,28 @@
 package com.coldmirrorapp;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
+import android.provider.MediaStore;
+import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ShareCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.view.Gravity;
@@ -23,10 +36,14 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends Activity {
@@ -91,33 +108,159 @@ public class MainActivity extends Activity {
         quoteList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                final AdapterView<?> aVP = parent; // AdapterView Parent
+                AdapterView<?> aVP = parent; // AdapterView Parent
                 final int pos = position;
+                final QuoteAdapter qa = (QuoteAdapter) parent.getAdapter();
+                final String filename = String.format("%s.mp3", qa.getItem(pos).getId());
+                final File imageFile = new File(getFilesDir().getPath() + "/" + filename);
+                final Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileProvider", getApplication().getPackageName()), imageFile);
+
+
+                ///TODO: Copy files to cache dir instead of files dir --done
+                ///TODO: Currently the created files is empty.. something about the reading -> output process doesn't work
+                final File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_NOTIFICATIONS), "coldmirrorapp");
+                if (!mediaStorageDir.exists()) {
+                    if (!mediaStorageDir.mkdirs()) {
+                        Log.e("sharing quotes", "failed to create directory");
+                    } else {
+                        Log.i("sharing quotes", "directory created");
+                    }
+                }
+                try {
+                    int size = (int) imageFile.length();
+                    byte[] bytes = new byte[size];
+                    OutputStream out = new FileOutputStream(new File(mediaStorageDir.getPath() + File.separator + filename));
+                    BufferedInputStream buf = new BufferedInputStream(new FileInputStream(imageFile));
+                    out.write(buf.read(bytes, 0, bytes.length));
+                    out.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                System.out.println(getFilesDir().getPath());
 
                 PopupMenu pM = new PopupMenu(ma, view);
                 pM.getMenu().add(Menu.FLAG_ALWAYS_PERFORM_CLOSE, 1, 1, getApplication().getString(R.string.share));
-              //  pM.getMenu().add(Menu.FLAG_ALWAYS_PERFORM_CLOSE, 2, 1, "Set as ringtone");
+               // pM.getMenu().add(Menu.FLAG_ALWAYS_PERFORM_CLOSE, 2, 1, "Set as ringtone");
                 pM.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case 1: //Share quote
-                                return shareQuote(aVP, pos);
+                                try {
+                                    if (!imageFile.exists()) {
+                                        final InputStream inputStream = getResources().openRawResource(getResources().getIdentifier(qa.getItem(pos).getId(), "raw", getPackageName()));
+                                        final FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+
+                                        byte buf[] = new byte[1024];
+                                        int len;
+
+                                        while ((len = inputStream.read(buf)) > 0) {
+                                            outputStream.write(buf, 0, len);
+                                        }
+
+                                        outputStream.flush();
+                                        outputStream.getFD().sync();
+                                        outputStream.close();
+                                        inputStream.close();
+                                    }
+
+                                    Intent intent = ShareCompat.IntentBuilder.from(ma)
+                                            .setType("audio/*")
+                                            .setStream(uri)
+                                            .setChooserTitle(getResources().getText(R.string.share))
+                                            .createChooserIntent()
+                                            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+                                    ma.startActivity(intent);
+
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                             case 2: //Set quote as ...
-                                QuoteAdapter qa = (QuoteAdapter) aVP.getAdapter();
-                                String filename = String.format("%s.mp3", qa.getItem(pos).getId());
 
-                                ///TODO: Copy files to cache dir instead of files dir
-                                File imageFile = new File(getFilesDir().getPath() + "/" + filename);
+                                if (Build.VERSION.SDK_INT >= 23) {
+                                    if (ContextCompat.checkSelfPermission(ma, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                                        Log.v("setup", "Permission is granted");
+                                    } else {
+                                        Log.v("setup", "Permission is revoked");
+                                        ActivityCompat.requestPermissions(ma, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                                    }
+                                } else { //permission is automatically granted on sdk<23 upon installation
+                                    Log.v("setup", "Permission is granted");
+                                }
 
-                                Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileProvider", getApplication().getPackageName()), imageFile);
+
+                                File src = new File(getFilesDir().getPath() + "/" + filename);
+                                File dst = new File(mediaStorageDir.getPath() + File.separator + filename);
+
+                                FileInputStream in = null;
+                                try {
+                                    in = new FileInputStream(src);
+                                    FileOutputStream out = null;
+                                    try {
+                                        out = new FileOutputStream(dst);
+                                        byte[] buf = new byte[1024];
+                                        int len;
+                                        while ((len = in.read(buf)) > 0)
+                                            out.write(buf, 0, len);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    } finally {
+                                        try {
+                                            if (out != null)
+                                                out.close();
+                                            if (in != null)
+                                                in.close();
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                } finally {
+                                    try {
+                                        if (in != null)
+                                            in.close();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
 
 
-                               // RingtoneManager.setActualDefaultRingtoneUri(ma, RingtoneManager.TYPE_NOTIFICATION, uri);
-                                //System.out.println(RingtoneManager.getActualDefaultRingtoneUri(ma, RingtoneManager.TYPE_NOTIFICATION));
 
 
 
+                                //commented code below makes your settings app crash because a notification sound is set that is unreachable outside this app
+                            /*    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.System.canWrite(ma)) {
+                                    Intent i = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+                                    ma.startActivity(i);
+                                } else {
+                                    try {
+                                        // The line below will set it as a default ring tone replace
+                                        // RingtoneManager.TYPE_RINGTONE with RingtoneManager.TYPE_NOTIFICATION
+                                        // to set it as a notification tone
+                                        RingtoneManager.setActualDefaultRingtoneUri(
+                                                getApplicationContext(), RingtoneManager.TYPE_NOTIFICATION,
+                                                uri);
+                                        Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), uri);
+                                        r.play();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+
+
+                                    try {
+                                        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                                        Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                                        r.play();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                                */
                                 break;
                         }
                         return true;
@@ -129,45 +272,8 @@ public class MainActivity extends Activity {
         });
     }
 
-    private boolean shareQuote(AdapterView<?> parent, int position){
-        QuoteAdapter qa = (QuoteAdapter) parent.getAdapter();
-        String filename = String.format("%s.mp3", qa.getItem(position).getId());
+    private boolean shareQuote(AdapterView<?> parent, int position) {
 
-        ///TODO: Copy files to cache dir instead of files dir
-        File imageFile = new File(getFilesDir().getPath() + "/" + filename);
-
-        Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileProvider", getApplication().getPackageName()), imageFile);
-
-        try {
-            if (!imageFile.exists()) {
-                final InputStream inputStream = getResources().openRawResource(getResources().getIdentifier(qa.getItem(position).getId(), "raw", getPackageName()));
-                final FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-
-                byte buf[] = new byte[1024];
-                int len;
-
-                while ((len = inputStream.read(buf)) > 0) {
-                    outputStream.write(buf, 0, len);
-                }
-
-                outputStream.flush();
-                outputStream.getFD().sync();
-                outputStream.close();
-                inputStream.close();
-            }
-
-            Intent intent = ShareCompat.IntentBuilder.from(ma)
-                    .setType("audio/*")
-                    .setStream(uri)
-                    .setChooserTitle(getResources().getText(R.string.share))
-                    .createChooserIntent()
-                    .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
-            ma.startActivity(intent);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         return true;
     }
 
