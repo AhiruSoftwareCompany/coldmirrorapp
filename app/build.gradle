@@ -20,6 +20,7 @@ android {
         throw new FileNotFoundException("Could not read version.properties!")
     }
 
+
     ext.autoIncrementBuildNumber = {
 
         if (versionPropsFile.canRead()) {
@@ -69,5 +70,5 @@ android {
 }
 dependencies {
     implementation 'com.google.firebase:firebase-appindexing:17.1.0'
-    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:support-v4:28.+' /* 28.+ means any version in the 28 major release */
 }
