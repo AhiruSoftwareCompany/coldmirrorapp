@@ -13,10 +13,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ShareCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
+
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
@@ -28,6 +30,7 @@ import android.widget.PopupMenu;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -59,6 +62,7 @@ public class MainActivity extends Activity {
 
         searchField = findViewById(R.id.searchField);
         quoteList = findViewById(R.id.quoteList);
+        quoteList.setNumColumns(2);
         modifySearch(true);
         shPrefs = getSharedPreferences("stats", 0);
         shPrefsEdit = shPrefs.edit();
@@ -136,7 +140,7 @@ public class MainActivity extends Activity {
 
                 PopupMenu pM = new PopupMenu(ma, view);
                 pM.getMenu().add(Menu.FLAG_ALWAYS_PERFORM_CLOSE, 1, 1, getApplication().getString(R.string.share));
-               // pM.getMenu().add(Menu.FLAG_ALWAYS_PERFORM_CLOSE, 2, 1, "Set as ringtone");
+                // pM.getMenu().add(Menu.FLAG_ALWAYS_PERFORM_CLOSE, 2, 1, "Set as ringtone");
                 pM.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
@@ -223,9 +227,6 @@ public class MainActivity extends Activity {
                                 }
 
 
-
-
-
                                 //commented code below makes your settings app crash because a notification sound is set that is unreachable outside this app
                             /*    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.System.canWrite(ma)) {
                                     Intent i = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
@@ -284,6 +285,7 @@ public class MainActivity extends Activity {
     }
 
     private void addQuotesToList(String filter) {
+        //QuoteAdapter quoteAdapter = new QuoteButtonAdapter(this, new ArrayList<Quote>());
         QuoteAdapter quoteAdapter = new QuoteAdapter(this, new ArrayList<Quote>());
         quoteList.setAdapter(quoteAdapter);
 

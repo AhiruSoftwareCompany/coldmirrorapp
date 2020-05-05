@@ -24,6 +24,7 @@ gradlew.bat
 gradle.properties
 settings.gradle
 local.properties
+/gradle
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -74,3 +75,4 @@ freeline_project_description.json
 ehthumbs.db
 Thumbs.db
 desktop.ini
+
