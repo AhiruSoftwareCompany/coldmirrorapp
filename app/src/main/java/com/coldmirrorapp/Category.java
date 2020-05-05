@@ -2,12 +2,12 @@ package com.coldmirrorapp;
 
 enum Category {
 
-    harrypotter("", "#FF69B4"),
-    avengers("", "#4286f4"),
-    random("", "#F7B600"),
-    japanoschlampen("", "#c141f4"),
-    kunstwissenschaftlicheanalyse("", "#bab76a"),
-    tatort("", "#0a1bb5"),
+    harrypotter("Harry Potter", "#FF69B4"),
+    avengers("Avengers Synchro", "#4286f4"),
+    random("Random", "#F7B600"),
+    japanoschlampen("Japanoschlampen", "#c141f4"),
+    kunstwissenschaftlicheanalyse("Kunstwissenschaftliche Analyse", "#bab76a"),
+    tatort("Tatort Synchro", "#0a1bb5"),
     nothing("", "");
 
     String name;
