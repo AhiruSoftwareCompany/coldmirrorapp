@@ -1,6 +1,8 @@
 # coldmirrorapp
 A soundboard app with quotes and effects from [coldmirror](https://www.youtube.com/user/coldmirror) (German YouTuber)
 
+![Android Build](https://github.com/AhiruSoftwareCompany/coldmirrorapp/workflows/Android%20Build/badge.svg)
+
 [![https://play.google.com/apps/testing/com.coldmirrorapp](https://play.google.com/intl/en_us/badges/images/badge_new.png)](https://play.google.com/apps/testing/com.coldmirrorapp)
 
 ## Installing the coldmirrorapp
