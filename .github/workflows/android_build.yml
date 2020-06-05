@@ -1,0 +1,36 @@
+name: Android Build
+
+# When to run workflow
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# What to do
+jobs:
+  build:
+    # Define environment
+    runs-on: ubuntu-latest
+
+    steps:
+    # Check out code
+    - uses: actions/checkout@v2
+
+    # Set up Java
+    - name: Set Up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+
+    # Missing sticky bit on ./gradlew
+    - name: Make gradlew executable
+      run: chmod +x ./gradlew
+
+      # Run gradle test
+    - name: Run Tests
+      run: ./gradlew test
+
+    # Build project
+    - name: Build Project
+      run: ./gradlew assemble
