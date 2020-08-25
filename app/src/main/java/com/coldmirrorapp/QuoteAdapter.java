@@ -24,9 +24,8 @@ class QuoteAdapter extends ArrayAdapter<Quote> {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
-
-        Quote quote = getItem(position);
         View v;
+        Quote quote = getItem(position);
 
         if (useButtonLayout) {
             v = inflater.inflate(R.layout.quote_button_item, parent, false);
@@ -49,14 +48,5 @@ class QuoteAdapter extends ArrayAdapter<Quote> {
             quoteCategory.setTextColor(Color.parseColor(quote.getColor()));
         }
         return v;
-    }
-
-
-    public void setButtonLayout() {
-        useButtonLayout = true;
-    }
-
-    public void setListLayout() {
-        useButtonLayout = false;
     }
 }

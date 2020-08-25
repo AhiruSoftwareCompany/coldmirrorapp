@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
     private boolean doubleBackToExitPressedOnce;
     private SharedPreferences shPrefs;
     private SharedPreferences.Editor shPrefsEdit;
+    private QuoteAdapter qa;
 
     private Quote[] quoteArray;
 
@@ -62,7 +63,6 @@ public class MainActivity extends Activity {
 
         searchField = findViewById(R.id.searchField);
         quoteList = findViewById(R.id.quoteList);
-        quoteList.setNumColumns(2);
         modifySearch(true);
         shPrefs = getSharedPreferences("stats", 0);
         shPrefsEdit = shPrefs.edit();
@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 AdapterView<?> aVP = parent; // AdapterView Parent
                 final int pos = position;
-                final QuoteAdapter qa = (QuoteAdapter) parent.getAdapter();
+                qa = (QuoteAdapter) parent.getAdapter();
                 final String filename = String.format("%s.mp3", qa.getItem(pos).getId());
                 final File imageFile = new File(getFilesDir().getPath() + "/" + filename);
                 final Uri uri = FileProvider.getUriForFile(ma, String.format("%s.fileProvider", getApplication().getPackageName()), imageFile);
@@ -360,6 +360,13 @@ public class MainActivity extends Activity {
             case R.id.random:
                 play(Quote.getRandom());
                 break;
+          /*  case R.id.list:
+                if(quoteList.getNumColumns() == 2) {
+                    quoteList.setNumColumns(1);
+                } else {
+                    quoteList.setNumColumns(2);
+                }
+                break;*/
             case R.id.about:
                 AlertDialog.Builder b = new AlertDialog.Builder(this);
                 b.setTitle(R.string.aboutLong);
