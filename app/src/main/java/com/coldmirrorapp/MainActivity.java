@@ -290,7 +290,7 @@ public class MainActivity extends Activity {
 
     private void addQuotesToList(String filter) {
         //QuoteAdapter quoteAdapter = new QuoteButtonAdapter(this, new ArrayList<Quote>());
-        QuoteAdapter quoteAdapter = new QuoteAdapter(this, new ArrayList<Quote>());
+        QuoteAdapter quoteAdapter = new QuoteAdapter(this, new ArrayList<Quote>(), listStatus);
         quoteList.setAdapter(quoteAdapter);
 
         for (Quote aQuoteArray : quoteArray) {
@@ -354,6 +354,8 @@ public class MainActivity extends Activity {
             quoteList.setNumColumns(2);
             quoteList.setVerticalSpacing(0);
         }
+        // Clear search and rebuild thing
+        modifySearch(true);
     }
 
     public void switchGridLayout() {
