@@ -45,7 +45,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     private SearchView searchField;
-    private MainActivity ma = this;
+    private final MainActivity ma = this;
     private Menu menu;
     private GridView quoteList;
     private MediaPlayer mediaPlayer;

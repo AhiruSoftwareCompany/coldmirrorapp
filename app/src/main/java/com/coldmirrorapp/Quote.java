@@ -3,7 +3,7 @@ package com.coldmirrorapp;
 import androidx.annotation.NonNull;
 
 class Quote {
-    private static Quote[] quoteArray = {
+    private static final Quote[] quoteArray = {
             new Quote(Category.harrypotter, "abgeblitzt", "Abgeblitzt!", "5 Minuten Harry Podcast #9"),
             new Quote(Category.harrypotter, "absichtlicheschaedigung", "Absichtliche Schädigung"),
             new Quote(Category.harrypotter, "achdumeinescheisse", "Ach du meine Scheiße!", "Harry Potter und schon wieder irgendwas"),
@@ -133,10 +133,10 @@ class Quote {
             new Quote(Category.tatort, "spassundaction", "Spaß und Action wird groß geschrieben"),
             new Quote(Category.tatort, "tachdusackfalte", "Tach, du Sackfalte")};
 
-    private String id;
-    private String name;
+    private final String id;
+    private final String name;
     private String source;
-    private Category category;
+    private final Category category;
 
     public Quote(Category category, String id, String name) {
         this.category = category;

@@ -10,8 +10,8 @@ enum Category {
     tatort("Tatort Synchro", "#0a1bb5"),
     nothing("", "");
 
-    String name;
-    String color;
+    final String name;
+    final String color;
 
     Category(String name, String color) {
         this.name = name;
