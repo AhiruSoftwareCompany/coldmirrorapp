@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/stop"
         android:icon="@android:drawable/ic_media_pause"
@@ -19,9 +19,9 @@
         android:showAsAction="always"
         android:title="@string/menuSearch"
         android:visible="true" />
-    <!--<item
+    <item
         android:id="@+id/list"
-        android:title="Item" />-->
+        android:title="List/Button" />
     <item
         android:id="@+id/about"
         android:showAsAction="never"
