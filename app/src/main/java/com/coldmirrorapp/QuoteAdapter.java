@@ -16,10 +16,9 @@ import java.util.ArrayList;
 
 class QuoteAdapter extends ArrayAdapter<Quote> {
 
-    private boolean useButtonLayout = true;
-    private ArrayList<Quote> quotes;
-    private Context context;
-    private ListStatus listStatus;
+    private final ArrayList<Quote> quotes;
+    private final Context context;
+    private final ListStatus listStatus;
 
     QuoteAdapter(Context context, ArrayList<Quote> arrayList, ListStatus listStatus) {
         super(context, R.layout.quote_list_item, arrayList);

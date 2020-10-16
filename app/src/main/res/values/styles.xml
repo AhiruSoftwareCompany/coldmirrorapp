@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+    <style name="AppBaseTheme" parent="android:Theme.Light" />
     @android:style/Theme.Material
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="android:logo">@android:color/transparent</item>

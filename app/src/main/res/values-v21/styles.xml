@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppBaseTheme" parent="android:Theme.Material"></style>
+    <style name="AppBaseTheme" parent="android:Theme.Material" />
 
     <style name="AppTheme" parent="android:Theme.Material">
 

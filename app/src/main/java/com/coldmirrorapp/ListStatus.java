@@ -4,7 +4,7 @@ public enum ListStatus {
     BUTTON(2),
     LIST(1);
 
-    int numColumns;
+    final int numColumns;
 
     ListStatus(int numColumns) {
         this.numColumns = numColumns;
