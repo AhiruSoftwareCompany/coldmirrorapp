@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -51,6 +52,7 @@ public class MainActivity extends Activity {
     private SharedPreferences shPrefs;
     private SharedPreferences.Editor shPrefsEdit;
     private QuoteAdapter qa;
+    private ListStatus listStatus;
 
     private Quote[] quoteArray;
 
@@ -336,6 +338,26 @@ public class MainActivity extends Activity {
         }
     }
 
+    public void setGridLayout(ListStatus listStatus) {
+        this.listStatus = listStatus;
+        // setting the correct number of columns
+        quoteList.setNumColumns(listStatus.numColumns);
+
+        if(listStatus == ListStatus.LIST){
+            //do stuff for list
+        } else {
+            // do stuff for button
+        }
+    }
+
+    public void switchGridLayout() {
+        if (listStatus == ListStatus.LIST) {
+            setGridLayout(ListStatus.BUTTON);
+        } else {
+            setGridLayout(ListStatus.LIST);
+        }
+    }
+
     /**
      * Layout-Stuff
      */
@@ -360,13 +382,9 @@ public class MainActivity extends Activity {
             case R.id.random:
                 play(Quote.getRandom());
                 break;
-          /*  case R.id.list:
-                if(quoteList.getNumColumns() == 2) {
-                    quoteList.setNumColumns(1);
-                } else {
-                    quoteList.setNumColumns(2);
-                }
-                break;*/
+            case R.id.list:
+                switchGridLayout();
+                break;
             case R.id.about:
                 AlertDialog.Builder b = new AlertDialog.Builder(this);
                 b.setTitle(R.string.aboutLong);
