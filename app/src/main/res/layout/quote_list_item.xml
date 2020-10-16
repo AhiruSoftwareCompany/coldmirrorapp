@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="2dp">
 
     <TextView
-        android:id="@+id/quoteName"
-        android:layout_width="match_parent"
+        android:id="@+id/quoteTitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@android:string/unknownName" />
+        android:text="Quote Title"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="2dp">
 
         <TextView
             android:id="@+id/quoteSource"
-            android:layout_width="wrap_content"
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@android:string/unknownName" />
+            android:autoSizeTextType="uniform"
+            android:gravity="start|center"
+            android:text="Krasse Quellenangabe"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/quoteCategory"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:text="@android:string/unknownName" />
-    </LinearLayout>
+            android:gravity="center|end"
+            android:text="Harry Potter"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp">
-    </Space>
+    </LinearLayout>
 </LinearLayout>
