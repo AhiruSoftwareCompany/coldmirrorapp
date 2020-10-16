@@ -1,5 +1,7 @@
 package com.coldmirrorapp;
 
+import androidx.annotation.NonNull;
+
 class Quote {
     private static Quote[] quoteArray = {
             new Quote(Category.harrypotter, "abgeblitzt", "Abgeblitzt!", "5 Minuten Harry Podcast #9"),
@@ -94,7 +96,7 @@ class Quote {
             new Quote(Category.random, "daswaerbescheuert", "Das wär bescheuert", "How to Video Video #2 - Drehbuch (der Film im Kopf)"),
             new Quote(Category.random, "dumm", "Dumm!"),
             new Quote(Category.random, "durchnefetteexplosion", "Durch ne fette Explosion", "StarStarSpace #21"),
-            new Quote(Category.random, "fickmichblick", "\'Fick mich\' Blick"),
+            new Quote(Category.random, "fickmichblick", "'Fick mich' Blick"),
             new Quote(Category.random, "fuerbesondereleute", "Für besondere Leute", "hr Videowettbewerb \"Du führst Regie\""),
             new Quote(Category.random, "hahagay", "Haha, das ist gay."),
             new Quote(Category.random, "hi1", "Hiii 1"),
@@ -169,6 +171,7 @@ class Quote {
         return name;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return name;

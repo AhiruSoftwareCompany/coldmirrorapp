@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ShareCompat;
 import androidx.core.content.ContextCompat;
@@ -70,6 +71,7 @@ public class MainActivity extends Activity {
         modifySearch(true);
         shPrefs = getSharedPreferences("stats", 0);
         shPrefsEdit = shPrefs.edit();
+        shPrefsEdit.apply();
 
         searchField.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
@@ -109,7 +111,6 @@ public class MainActivity extends Activity {
         quoteList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                AdapterView<?> aVP = parent; // AdapterView Parent
                 final int pos = position;
                 qa = (QuoteAdapter) parent.getAdapter();
                 final String filename = String.format("%s.mp3", qa.getItem(pos).getId());
@@ -155,7 +156,7 @@ public class MainActivity extends Activity {
                                         final InputStream inputStream = getResources().openRawResource(getResources().getIdentifier(qa.getItem(pos).getId(), "raw", getPackageName()));
                                         final FileOutputStream outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
 
-                                        byte buf[] = new byte[1024];
+                                        byte[] buf = new byte[1024];
                                         int len;
 
                                         while ((len = inputStream.read(buf)) > 0) {
@@ -213,8 +214,7 @@ public class MainActivity extends Activity {
                                         try {
                                             if (out != null)
                                                 out.close();
-                                            if (in != null)
-                                                in.close();
+                                            in.close();
                                         } catch (IOException e) {
                                             e.printStackTrace();
                                         }
@@ -345,7 +345,7 @@ public class MainActivity extends Activity {
         // setting the correct number of columns
         quoteList.setNumColumns(listStatus.numColumns);
 
-        if(listStatus == ListStatus.LIST){
+        if (listStatus == ListStatus.LIST) {
             //do stuff for list
             quoteList.setNumColumns(1);
             quoteList.setVerticalSpacing(5); // equals 2dp?
