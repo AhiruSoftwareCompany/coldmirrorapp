@@ -187,4 +187,11 @@ class Quote {
         }
         return "";
     }
+
+    public String getCategoryName() {
+        if (category != null) {
+            return category.getName();
+        }
+        return "";
+    }
 }
