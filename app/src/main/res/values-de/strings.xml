@@ -10,4 +10,5 @@
     <string name="search">Nach Spruch suchen</string>
     <string name="share">Spruch weiterleiten …</string>
     <string name="add_widget">Widget hinzufügen</string>
+    <string name="aboutText">Fehlt Dir ein Spruch? Hilf uns und schreib eine Email an <a href="mailto:AhiruSoftware@outlook.com">AhiruSoftware@outlook.com</a>!\n\nMade with ❤️ in Germany\n\nVergib\' uns unser Brot,\nauch wir vergeben dem Brot.\n\n© Neunzehnhundertzwölfundachzig - 2020 Ahiru Software</string>
 </resources>
