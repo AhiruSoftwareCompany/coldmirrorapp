@@ -65,6 +65,8 @@ public class MainActivity extends Activity {
 
         searchField = findViewById(R.id.searchField);
         quoteList = findViewById(R.id.quoteList);
+        setGridLayout(ListStatus.BUTTON);
+
         modifySearch(true);
         shPrefs = getSharedPreferences("stats", 0);
         shPrefsEdit = shPrefs.edit();
@@ -345,8 +347,12 @@ public class MainActivity extends Activity {
 
         if(listStatus == ListStatus.LIST){
             //do stuff for list
+            quoteList.setNumColumns(1);
+            quoteList.setVerticalSpacing(5); // equals 2dp?
         } else {
             // do stuff for button
+            quoteList.setNumColumns(2);
+            quoteList.setVerticalSpacing(0);
         }
     }
 

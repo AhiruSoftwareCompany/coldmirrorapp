@@ -18,8 +18,5 @@
     <GridView
         android:id="@+id/quoteList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="#444444"
-        android:dividerHeight="2dp"
-        android:numColumns="2" />
+        android:layout_height="wrap_content" />
 </LinearLayout>
