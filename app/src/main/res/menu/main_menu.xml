@@ -2,26 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/stop"
-        android:icon="@android:drawable/ic_media_pause"
+        android:icon="@drawable/baseline_pause_white_18dp"
         android:showAsAction="always"
         android:title="@string/menuStop"
         android:visible="false" />
     <item
         android:id="@+id/random"
-        android:icon="@android:drawable/ic_menu_help"
+        android:icon="@drawable/baseline_help_outline_white_18dp"
         android:showAsAction="ifRoom"
         android:title="@string/random"
         android:visible="true" />
     <item
         android:id="@+id/search"
-        android:icon="@android:drawable/ic_search_category_default"
+        android:icon="@drawable/baseline_search_white_18dp"
         android:showAsAction="ifRoom"
         android:title="@string/menuSearch"
         android:visible="true" />
     <item
         android:id="@+id/list"
         android:title="@string/switchLayout"
-        android:icon="@android:drawable/ic_dialog_dialer"
+        android:icon="@drawable/baseline_reorder_white_18dp"
         android:showAsAction="ifRoom"/>
     <item
         android:id="@+id/about"

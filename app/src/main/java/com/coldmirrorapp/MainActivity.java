@@ -279,10 +279,16 @@ public class MainActivity extends Activity {
             searchField.setIconified(true);
             addQuotesToList(null);
             searchField.clearFocus();
+            if (menu != null) {
+                menu.findItem(R.id.search).setIcon(R.drawable.baseline_search_white_18dp);
+            }
         } else {
             searchField.setVisibility(View.VISIBLE);
             searchField.setIconified(false);
             searchField.requestFocus();
+            if (menu != null) {
+                menu.findItem(R.id.search).setIcon(R.drawable.baseline_search_off_white_18dp);
+            }
         }
     }
 
@@ -347,10 +353,16 @@ public class MainActivity extends Activity {
             //do stuff for list
             quoteList.setNumColumns(1);
             quoteList.setVerticalSpacing(5); // equals 2dp?
+            if (menu != null) {
+                menu.findItem(R.id.list).setIcon(R.drawable.baseline_view_module_white_18dp);
+            }
         } else {
             // do stuff for button
             quoteList.setNumColumns(2);
             quoteList.setVerticalSpacing(0);
+            if (menu != null) {
+                menu.findItem(R.id.list).setIcon(R.drawable.baseline_reorder_white_18dp);
+            }
         }
         // Clear search and rebuild thing
         modifySearch(true);
