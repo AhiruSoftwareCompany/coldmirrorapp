@@ -159,7 +159,7 @@ class Quote {
         return quoteArray[(int) (Math.random() * ((quoteArray.length)))];
     }
 
-    String getColor() {
+    public String getColor() {
         return category.toString();
     }
 
@@ -180,13 +180,6 @@ class Quote {
     public String getSource() {
         if (source != null) {
             return source;
-        }
-        return "";
-    }
-
-    public String getCategory() {
-        if (category != null) {
-            return category.name();
         }
         return "";
     }

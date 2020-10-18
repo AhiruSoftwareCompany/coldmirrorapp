@@ -38,18 +38,20 @@ class QuoteAdapter extends ArrayAdapter<Quote> {
 
         if (listStatus == ListStatus.BUTTON) {
             convertView = inflater.inflate(R.layout.quote_button_item, parent, false);
+
             Button quoteName = convertView.findViewById(R.id.quoteName);
             quoteName.setText(quote.getName());
             quoteName.setTextColor(Color.parseColor(quote.getColor()));
-
         } else {
             convertView = inflater.inflate(R.layout.quote_list_item, parent, false);
+
             TextView quoteTitle = convertView.findViewById(R.id.quoteTitle);
             TextView quoteCategory = convertView.findViewById(R.id.quoteCategory);
             TextView quoteSource = convertView.findViewById(R.id.quoteSource);
 
             quoteTitle.setText(quote.getName());
             quoteTitle.setTextColor(Color.parseColor(quote.getColor()));
+
             quoteCategory.setText(quote.getCategoryName());
             quoteCategory.setTextColor(Color.parseColor(quote.getColor()));
 
@@ -57,10 +59,6 @@ class QuoteAdapter extends ArrayAdapter<Quote> {
             quoteSource.setTextColor(Color.parseColor(quote.getColor()));
         }
 
-
         return convertView;
-        /*
-
-         */
     }
 }

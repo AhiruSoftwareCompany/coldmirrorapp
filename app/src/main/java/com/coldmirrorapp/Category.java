@@ -1,12 +1,12 @@
 package com.coldmirrorapp;
 
 enum Category {
-
+    //category colors: material.io 600
     harrypotter("Harry Potter", "#d81b60"),
     avengers("Avengers Synchro", "#3949ab"),
     random("Random", "#fdd835"),
     japanoschlampen("Japanoschlampen", "#8e24aa"),
-    kunstwissenschaftlicheanalyse("Kunstwissenschaftliche Analyse", "#c0ca33"),
+    kunstwissenschaftlicheanalyse("Kunstwissenschaftliche Analyse", "#f4511e"),
     tatort("Tatort Synchro", "#039be5"),
     nothing("", "#757575");
 
@@ -22,7 +22,6 @@ enum Category {
         return name;
     }
 
-    @Override
     public String toString() {
         return color;
     }

@@ -4,6 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="primary_material_dark">#030303</color>
-    <color name="legacy_light_primary">#000000</color>
-    <color name="bright_foreground_light">#ffffff</color>
+
+    <!-- app colors: material.io grey 900 -->
+
+    <color name="app_primary">#212121</color>
+    <color name="app_light">#484848</color>
+    <color name="app_dark">#000000</color>
+
+    <color name="text_white">#ffffff</color>
+    <color name="text_black">#000000</color>
+
 </resources>
