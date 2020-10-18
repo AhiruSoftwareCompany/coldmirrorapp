@@ -9,34 +9,36 @@
         android:id="@+id/quoteTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quote Title"
-        android:textColor="#ffffff"
+        android:text="@+string/placeholder"
+        android:textColor="@color/text_white"
         android:textSize="18sp" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:orientation="horizontal"
+        android:gravity="center_vertical|center_horizontal"
         android:padding="2dp">
 
         <TextView
             android:id="@+id/quoteSource"
-            android:layout_width="290dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:autoSizeTextType="uniform"
-            android:gravity="start|center"
-            android:text="Krasse Quellenangabe"
-            android:textColor="#ffffff"
+            android:gravity="start"
+            android:layout_weight="1"
+            android:text="@+string/placeholder"
+            android:textColor="@color/text_white"
             android:textSize="12sp" />
 
         <TextView
             android:id="@+id/quoteCategory"
-            android:layout_width="110dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center|end"
-            android:text="Harry Potter"
-            android:textColor="#ffffff"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:text="@+string/placeholder"
+            android:textColor="@color/text_white"
             android:textSize="12sp" />
 
     </LinearLayout>
