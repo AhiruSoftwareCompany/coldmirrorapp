@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">Coldmirror Soundboard</string>
-    <string name="aboutText" >Do you miss a essential quote? Help us by writing an email to <a href="mailto:AhiruSoftware@outlook.com">AhiruSoftware@outlook.com</a>!\n\nMade with ❤️ in Germany\n\nVergib\' uns unser Brot,\nauch wir vergeben dem Brot.\n\n© Neunzehnhundertzwölfundachzig - 2020 Ahiru Software</string>
+    <string name="aboutText" >Do you miss an essential quote? Help us by writing an email to <a href="mailto:AhiruSoftware@outlook.com">AhiruSoftware@outlook.com</a>!  Made with ❤️ in Germany  Vergib\' uns unser Brot, auch wir vergeben dem Brot.  © Neunzehnhundertzwölfundachzig - 2020 Ahiru Software</string>
     <string name="menuSearch">Search</string>
     <string name="menuStop">Stop</string>
     <string name="search">Search for quote</string>
