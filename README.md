@@ -13,9 +13,7 @@ Download the [coldmirror.apk](https://github.com/AhiruSoftwareCompany/coldmirror
 copy it to your android phone. Open the file browser and navigate to the apk file. To install it,
 click on it and accept the warning. Enjoy the app :)
 
-<img src="https://raw.githubusercontent.com/AhiruSoftwareCompany/coldmirrorapp/master/screenshots/screenshot1.png" alt="App screenshot 1" width="200"/>
-<img src="https://raw.githubusercontent.com/AhiruSoftwareCompany/coldmirrorapp/master/screenshots/screenshot2.png" alt="App screenshot 2" width="200"/>
-<img src="https://raw.githubusercontent.com/AhiruSoftwareCompany/coldmirrorapp/master/screenshots/screenshot3.png" alt="App screenshot 3" width="200"/>
+<img src="https://raw.githubusercontent.com/AhiruSoftwareCompany/coldmirrorapp/master/screenshots/screenshot1.png" alt="App screenshot 1" width="200"/> <img src="https://raw.githubusercontent.com/AhiruSoftwareCompany/coldmirrorapp/master/screenshots/screenshot2.png" alt="App screenshot 2" width="200"/> <img src="https://raw.githubusercontent.com/AhiruSoftwareCompany/coldmirrorapp/master/screenshots/screenshot3.png" alt="App screenshot 3" width="200"/>
 
 ## Using the coldmirrorapp
 Clicking on a button plays the wanted sound, long press opens a share dialog to share the sound e.g.
