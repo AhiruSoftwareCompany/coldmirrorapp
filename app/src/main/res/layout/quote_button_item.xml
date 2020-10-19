@@ -11,5 +11,7 @@
         android:layout_height="68dp"
         android:background="@drawable/button_color"
         android:clickable="false"
+        android:padding="6dp"
+        android:breakStrategy="balanced"
         android:focusable="false"/>
 </LinearLayout>
