@@ -6,7 +6,8 @@ class Quote {
     private static final Quote[] quoteArray = {
             new Quote(Category.harrypotter, "abgeblitzt", "Abgeblitzt!", "5 Minuten Harry Podcast #9"),
             new Quote(Category.harrypotter, "absichtlicheschaedigung", "Absichtliche Schädigung"),
-            new Quote(Category.harrypotter, "achdumeinescheisse", "Ach du meine Scheiße!", "Harry Potter und schon wieder irgendwas"),
+            new Quote(Category.harrypotter, "achdumeinescheisse", "Ach du meine Sch**ße!", "Harry" +
+                    " Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "auchdualtelady", "Auch du, alte Lady", "5 Minuten Harry Podcast #5"),
             new Quote(Category.harrypotter, "besseralsnichts", "Besser als nichts", "5 Minuten Harry Podcast #11"),
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf der Stirn"),
@@ -65,8 +66,8 @@ class Quote {
             new Quote(Category.harrypotter, "rechenichsoviel", "Rechne nich so viel, Ron.", "Harry Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "scheissaufdiedrittewelt", "Scheiß auf die dritte Welt!", "Harry Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "schlechterfilm", "Schlechter Film"),
-            new Quote(Category.harrypotter, "schwulbullshit", "Schwul, Bullshit"),
-            new Quote(Category.harrypotter, "sogebildet", "So Gebildet"),
+            new Quote(Category.harrypotter, "schwulbullshit", "Schwul, Bulls**t"),
+            new Quote(Category.harrypotter, "sogebildet", "So gebildet"),
             new Quote(Category.harrypotter, "soupsoupsoup", "Soup Soup Soup", "5 Minuten Harry Podcast #5"),
             new Quote(Category.harrypotter, "sovielaufwand", "Ey, aber das ist so viel Aufwand", "5 Minuten Harry Podcast #11"),
             new Quote(Category.harrypotter, "suppenauswahl", "Suppenauswahl", "5 Minuten Harry Podcast #5"),
