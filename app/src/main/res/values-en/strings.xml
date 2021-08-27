@@ -10,6 +10,7 @@
     <string name="aboutLong">About this app</string>
     <string name="random">Random</string>
     <string name="add_widget">Add widget</string>
-    <string name="aboutText">Do you miss an essential quote? Help us by writing an email to <a href="mailto:AhiruSoftware@outlook.com">AhiruSoftware@outlook.com</a>!\n\nMade with ❤️ in Germany\n\nVergib\' uns unser Brot,\nauch wir vergeben dem Brot.\n\n© Neunzehnhundertzwölfundachzig - 2020 Ahiru Software</string>
+    <string name="aboutText">Do you miss an essential quote? Help us by writing an email to <a
+        href="mailto:AhiruSoftware@outlook.com">AhiruSoftware@outlook.com</a>!\n\nMade with ❤️ in Germany\n\nVergib\' uns unser Brot,\nauch wir vergeben dem Brot.\n\n© Neunzehnhundertzwölfundachzig - 2021 Ahiru Software</string>
     <string name="switchLayout">Switch Layout</string>
 </resources>
