@@ -7,7 +7,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    buildToolsVersion '30.0.2'
 
     def versionPropsFile = file('version.properties')
     def versionBuild
@@ -37,7 +37,7 @@ android {
     defaultConfig {
         applicationId "com.coldmirrorapp"
         minSdkVersion 15
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode versionBuild
         versionName "1.3." + versionBuild
     }
