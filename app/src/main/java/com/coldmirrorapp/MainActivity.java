@@ -129,7 +129,7 @@ public class MainActivity extends Activity {
                 try {
                     int size = (int) imageFile.length();
                     byte[] bytes = new byte[size];
-                    OutputStream out = new FileOutputStream(new File(mediaStorageDir.getPath() + File.separator + filename));
+                    OutputStream out = new FileOutputStream(mediaStorageDir.getPath() + File.separator + filename);
                     BufferedInputStream buf = new BufferedInputStream(new FileInputStream(imageFile));
                     out.write(buf.read(bytes, 0, bytes.length));
                     out.close();
@@ -433,11 +433,6 @@ public class MainActivity extends Activity {
         doubleBackToExitPressedOnce = true;
         Toast.makeText(this, R.string.pressAgainToLeave, Toast.LENGTH_SHORT).show();
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 1700);
+        new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 1700);
     }
 }
