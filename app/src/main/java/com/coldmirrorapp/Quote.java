@@ -64,8 +64,8 @@ class Quote {
             new Quote(Category.harrypotter, "purezauberei", "Pure Zauberei"),
             new Quote(Category.harrypotter, "radclifflachen", "Radcliff's Lachen", "5 Minuten Harry Podcast #5"),
             new Quote(Category.harrypotter, "rechenichsoviel", "Rechne nich so viel, Ron.", "Harry Potter und schon wieder irgendwas"),
-            new Quote(Category.harrypotter, "scheissaufdiedrittewelt", "Sch*** auf die dritte " +
-                    "Welt!", "Harry Potter und schon wieder irgendwas"),
+            //new Quote(Category.harrypotter, "scheissaufdiedrittewelt", "Sch*** auf die dritte " +
+            //        "Welt!", "Harry Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "schlechterfilm", "Schlechter Film"),
             new Quote(Category.harrypotter, "schwulbullshit", "Schwul, Bu*****t"),
             new Quote(Category.harrypotter, "sogebildet", "So gebildet"),
