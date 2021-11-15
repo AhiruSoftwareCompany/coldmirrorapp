@@ -6,8 +6,8 @@ class Quote {
     private static final Quote[] quoteArray = {
             new Quote(Category.harrypotter, "abgeblitzt", "Abgeblitzt!", "5 Minuten Harry Podcast #9"),
             new Quote(Category.harrypotter, "absichtlicheschaedigung", "Absichtliche Schädigung"),
-            new Quote(Category.harrypotter, "achdumeinescheisse", "Ach du meine Sch**ße!", "Harry" +
-                    " Potter und schon wieder irgendwas"),
+            //new Quote(Category.harrypotter, "achdumeinescheisse", "Ach du meine Sch**ße!",
+            // "Harry Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "auchdualtelady", "Auch du, alte Lady", "5 Minuten Harry Podcast #5"),
             new Quote(Category.harrypotter, "besseralsnichts", "Besser als nichts", "5 Minuten Harry Podcast #11"),
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf der Stirn"),
