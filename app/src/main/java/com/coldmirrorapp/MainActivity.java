@@ -298,8 +298,10 @@ public class MainActivity extends Activity {
         quoteList.setAdapter(quoteAdapter);
 
         for (Quote aQuoteArray : quoteArray) {
+            String lowercaseName = aQuoteArray.getName().toLowerCase();
+            String lowercaseSource = aQuoteArray.getSource().toLowerCase();
             if (filter != null) {
-                if (aQuoteArray.getName().toLowerCase().contains(filter.toLowerCase())) {
+                if (lowercaseName.contains(filter.toLowerCase()) | lowercaseSource.contains(filter.toLowerCase())) {
                     quoteAdapter.add(aQuoteArray);
                 }
             } else {
