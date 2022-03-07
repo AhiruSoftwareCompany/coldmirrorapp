@@ -12,7 +12,7 @@ class Quote {
             new Quote(Category.harrypotter, "besseralsnichts", "Besser als nichts", "5 Minuten Harry Podcast #11"),
             new Quote(Category.harrypotter, "blitzaufderstirn", "Blitzchen auf der Stirn"),
             new Quote(Category.harrypotter, "cyrillenomberg", "Cyrille Nomberg", "5 Minuten " +
-                    "Harry Podcast #5 - Soup Soup Soup"),
+                    "Harry Podcast #5"),
             new Quote(Category.harrypotter, "casting", "Holzcasting", "5 Minuten Harry Podcast #13"),
             new Quote(Category.harrypotter, "chefgehtrueckwaerts", "Chef geht rückwärts", "Harry Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "dasheissteristgeradeindeutschland", "Das heißt, er ist gerade in Deutschland?", "Harry Potter und schon wieder irgendwas"),
@@ -21,7 +21,7 @@ class Quote {
             new Quote(Category.harrypotter, "dasistunnoetigundzulang", "Das ist unnötig und zu lang", "5 Minuten Harry Podcast #9"),
             new Quote(Category.harrypotter, "dayum", "Dayum!", "5 Minuten Harry Podcast #9"),
             new Quote(Category.harrypotter, "dieantwortlautetja", "Die Antwortet lautet ja", "5 Minuten Harry Podcast #11"),
-            new Quote(Category.harrypotter, "logikpolizei", "Die Logikpolzei!", "5 Minuten Harry Podcast #5 - Soup Soup Soup"),
+            new Quote(Category.harrypotter, "logikpolizei", "Die Logikpolzei!", "5 Minuten Harry Podcast #5"),
             new Quote(Category.harrypotter, "dubistgemeldetundblockiert", "Du bist gemeldet und blockiert!"),
             new Quote(Category.harrypotter, "dubistsodumm", "Dumm", "Harry Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "duoberpflaume", "Du Oberpflaume", "5 Minuten Harry Podcast #4"),
@@ -35,7 +35,8 @@ class Quote {
             new Quote(Category.harrypotter, "getuschel", "Getuschel über Snape", "Harry Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "hagridwitz", "Hagrid's Witz", "5 Minuten Harry Podcast #5"),
             new Quote(Category.harrypotter, "harrybeimfrauenarzt", "Harry beim Frauenarzt", "Harry Potter und schon wieder irgendwas"),
-            new Quote(Category.harrypotter, "cyrillespinnenweben", "Hier fehlen Spinnenweben!", "5 Minuten Harry Podcast #5 - Soup Soup Soup"),
+            new Quote(Category.harrypotter, "cyrillespinnenweben", "Cyrille, hier fehlen " +
+                    "Spinnenweben!", "5 Minuten Harry Podcast #5"),
             new Quote(Category.harrypotter, "hashtaggoennung", "#Gönnung", "5 Minuten Harry Podcast #9"),
             new Quote(Category.harrypotter, "hashtagrelatable", "#relatable", "5 Minuten Harry Podcast #11"),
             new Quote(Category.harrypotter, "hellemal", "Das helle Mal"),
@@ -154,6 +155,7 @@ class Quote {
         this.category = category;
         this.id = id;
         this.name = name;
+        this.source = "";
     }
 
     public Quote(Category category, String id, String name, String source) {
@@ -183,17 +185,14 @@ class Quote {
         return name;
     }
 
+    public String getSource() {
+        return source;
+    }
+
     @NonNull
     @Override
     public String toString() {
         return name;
-    }
-
-    public String getSource() {
-        if (source != null) {
-            return source;
-        }
-        return "";
     }
 
     public String getCategoryName() {
