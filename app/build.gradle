@@ -6,7 +6,7 @@ apply plugin: 'com.android.application'
  */
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     def versionPropsFile = file('version.properties')
     def versionBuild
@@ -36,7 +36,7 @@ android {
     defaultConfig {
         applicationId "com.coldmirrorapp"
         minSdkVersion 15
-        targetSdkVersion 31
+        targetSdkVersion 32
         versionCode versionBuild
         versionName "1.3." + versionBuild
     }
@@ -61,10 +61,11 @@ android {
     }
 
     autoIncrementBuildNumber()
+    namespace 'com.coldmirrorapp'
 
 
 }
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.annotation:annotation:1.3.0'
+    implementation 'androidx.annotation:annotation:1.5.0'
 }
