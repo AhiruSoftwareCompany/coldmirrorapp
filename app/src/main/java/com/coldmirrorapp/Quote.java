@@ -81,6 +81,7 @@ class Quote {
             new Quote(Category.harrypotter, "toastrack", "Toast Rack"),
             new Quote(Category.harrypotter, "topbesetzung", "Top Besetzung"),
             new Quote(Category.harrypotter, "toplehrer", "Top Lehrer!", "5 Minuten Harry Podcast #12"),
+            new Quote(Category.harrypotter, "pfeilimnacken", "Pfeil im Nacken!", "5 Minuten Harry Podcast #24"),
             new Quote(Category.harrypotter, "unrealistischerfilm", "Unrealistischer Film", "5 Minuten Harry Podcast #13"),
             new Quote(Category.harrypotter, "uuuhdaskaufenwirnicht", "Uhh, das kaufen wir nicht", "5 Minuten Harry Podcast #2"),
             new Quote(Category.harrypotter, "volldumm", "Ah, voll dumm"),
