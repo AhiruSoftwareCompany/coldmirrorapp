@@ -24,6 +24,7 @@ class Quote {
             new Quote(Category.harrypotter, "logikpolizei", "Die Logikpolzei!", "5 Minuten Harry Podcast #5"),
             new Quote(Category.harrypotter, "dubistgemeldetundblockiert", "Du bist gemeldet und blockiert!"),
             new Quote(Category.harrypotter, "dubistsodumm", "Dumm", "Harry Potter und schon wieder irgendwas"),
+            new Quote(Category.harrypotter, "knallfroesche", "Dumbledores Knallfrösche", "5 Minuten Harry Podcast #15 - Fruchtgemüse"),
             new Quote(Category.harrypotter, "duoberpflaume", "Du Oberpflaume", "5 Minuten Harry Podcast #4"),
             new Quote(Category.harrypotter, "einaufmuepfigerarbeiter", "Ein aufmüpfiger Arbeiter!", "Harry Potter und schon wieder irgendwas"),
             new Quote(Category.harrypotter, "einelampe", "Eine Lampe", "5 Minuten Harry Podcast #9"),
@@ -91,6 +92,8 @@ class Quote {
             new Quote(Category.harrypotter, "wow", "Wow."),
             new Quote(Category.harrypotter, "wow2", "Wow.", "5 Minuten Harry Podcast #11"),
             new Quote(Category.harrypotter, "yaytot", "Yay, Tot :)"),
+            new Quote(Category.avengers, "beschissenearschwichshurebitch", "Besch* A* W* H* B*, " +
+                    "hat n S* im P*", "Behinderte, kleine Avengers Synchro"),
             new Quote(Category.avengers, "bratwurstmitsenf", "Bratwurst mit Senf", "Behinderte, kleine Avengers Synchro"),
             new Quote(Category.avengers, "einbausparvertrag", "Sweet, ein Bausparvertrag", "Behinderte, kleine Avengers Synchro"),
             new Quote(Category.avengers, "ichhabnstander", "Ich hab 'n Ständer", "Behinderte, kleine Avengers Synchro"),
