@@ -103,6 +103,8 @@ class Quote {
             new Quote(Category.avengers, "wasistdeinlieblingstrinken", "Was ist dein Lieblingsgetränk", "Behinderte, kleine Avengers Synchro"),
             new Quote(Category.japanoschlampen, "eigenartigerklaus", "Eigenartiger Klaus", "Japanoschlampen #35 - Alte und neue Rivalen"),
             new Quote(Category.japanoschlampen, "abachtzehn", "Ab 18!", "Japanoschlampen #8 - Operation Shopping"),
+            new Quote(Category.japanoschlampen, "dasisnhamster", "Das ist 'n Hamster!",
+                    "Japanoschlampen - THE MOVIE (Das supermega mysteriöse kackgruselige Horror Abenteuer)"),
             new Quote(Category.random, "aequitasbitch", "Was macht aequitas hier?"),
             new Quote(Category.random, "ahahahalustig", "Ahahaha Lustig!"),
             new Quote(Category.random, "bambus", "Bambus!", "Hilfe, mein Haus sieht sch***e aus, bau mir'n neues!"),
@@ -152,7 +154,7 @@ class Quote {
 
     private final String id;
     private final String name;
-    private String source;
+    private final String source;
     private final Category category;
 
     public Quote(Category category, String id, String name) {
