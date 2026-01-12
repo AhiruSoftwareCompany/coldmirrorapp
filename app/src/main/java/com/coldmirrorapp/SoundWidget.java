@@ -24,7 +24,7 @@ public class SoundWidget extends AppWidgetProvider {
 
         Intent active = new Intent(context, SoundWidget.class);
         active.setAction(ACTION_WIDGET_RECEIVER);
-        PendingIntent pI = PendingIntent.getBroadcast(context, 0, active, 0);
+        PendingIntent pI = PendingIntent.getBroadcast(context, 0, active, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.playSound, pI);
 
         // Instruct the widget manager to update the widget
